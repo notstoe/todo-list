@@ -26,38 +26,47 @@ function loadPage(){
         const containerTabContent = document.createElement('div');
             containerTabContent.classList.add('containerTabContent');
 
-        //TODO - NAVIGATION BAR (TABS)
+            //TODO - NAVIGATION BAR (TABS)
 
             const containerTabs = document.createElement('div');
                 containerTabs.classList.add('containerTabs');
         
-                const newTabButton = document.createElement('p');
-                    newTabButton.textContent = '+';
-                    newTabButton.classList.add('tab');
-                    newTabButton.setAttribute('id', 'newTabBtn');
+                const newTabBtn = document.createElement('p');
+                    newTabBtn.textContent = '+';
+                    newTabBtn.classList.add('tab');
+                    newTabBtn.setAttribute('id', 'newTabBtn');
 
-                    containerTabs.appendChild(newTabButton);
+                    containerTabs.appendChild(newTabBtn);
 
                 const defaultAllTab = document.createElement('p');
                     defaultAllTab.textContent = 'All Categories';
                     defaultAllTab.classList.add('tab');
 
-                    containerTabs.insertBefore(defaultAllTab, newTabButton);
+                    containerTabs.insertBefore(defaultAllTab, newTabBtn);
 
                 containerTabContent.appendChild(containerTabs);
 
             contentDiv.appendChild(containerTabContent);
 
 
-        //TODO - POPULATE TAB CONTENT
-        // call renderTab.js later
+            //TODO - POPULATE TAB CONTENT
+            // call renderTab.js later
+
             const tabContent = document.createElement('div');
                 tabContent.classList.add('tabContent');
+                
+                // const sampleTask = document.createElement('div');
+                //     sampleTask.textContent = 'I\'m a sample task, get me done!';
+                // TODO - add sample task to style it
+
+                const newTodoBtn = document.createElement('p');
+                    newTodoBtn.textContent = '+ Add New Task';
+                    newTodoBtn.setAttribute('id','newTodoBtn');
+                        
+                    tabContent.appendChild(newTodoBtn);
+
                 containerTabContent.appendChild(tabContent);
 
-        //TODO - ADD NEW TODO BUTTON
-
-        // logic for generating the button initially
         // call DOM-handling/modalNewButton.js when clicked
 
 }

@@ -48,11 +48,30 @@ body {
   border-left: none;
 }
 
+/* TABS CONTENT */
+
 .tabContent {
+  position: relative;
   margin-bottom: 2vw;
   min-height: 70vh;
   background-color: #faf0be;
   border-radius: 5px;
 
+}
+
+#newTodoBtn {
+  display: block;
+  position: absolute;
+  right: 1vw;
+  bottom: 1vw;
+  margin-top: 1vw;
+  padding: 0.8vw;
+  width: 10vw;
+  border-radius: 5px;
+}
+
+#newTodoBtn:hover {
+  background-color: hsl(51, 50%, 77%);
+  cursor: pointer;
 }
 
