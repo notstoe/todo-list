@@ -21,13 +21,41 @@ function loadPage(){
 
     contentDiv.appendChild(titleDiv);
 
-    //TODO - NAVIGATION BAR (TABS)
+    // CONTAINER FOR TAB CONTENT + TABS
+
+        const containerTabContent = document.createElement('div');
+            containerTabContent.classList.add('containerTabContent');
+
+        //TODO - NAVIGATION BAR (TABS)
+
+            const containerTabs = document.createElement('div');
+                containerTabs.classList.add('containerTabs');
+        
+                const newTabButton = document.createElement('p');
+                    newTabButton.textContent = '+';
+                    newTabButton.classList.add('tab');
+                    newTabButton.setAttribute('id', 'newTabBtn');
+
+                    containerTabs.appendChild(newTabButton);
+
+                const defaultAllTab = document.createElement('p');
+                    defaultAllTab.textContent = 'All Categories';
+                    defaultAllTab.classList.add('tab');
+
+                    containerTabs.insertBefore(defaultAllTab, newTabButton);
+
+                containerTabContent.appendChild(containerTabs);
+
+            contentDiv.appendChild(containerTabContent);
 
 
-    //TODO - POPULATE CURRENT TAB
-        // call renderTab.js
+        //TODO - POPULATE TAB CONTENT
+        // call renderTab.js later
+            const tabContent = document.createElement('div');
+                tabContent.classList.add('tabContent');
+                containerTabContent.appendChild(tabContent);
 
-    //TODO - ADD NEW TODO BUTTON
+        //TODO - ADD NEW TODO BUTTON
 
         // logic for generating the button initially
         // call DOM-handling/modalNewButton.js when clicked
