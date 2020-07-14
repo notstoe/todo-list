@@ -2,7 +2,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: linear-gradient(to bottom right, white, blue);
+    background-image: linear-gradient(to bottom right, rgb(221, 221, 221), rgb(1, 1, 221));
 }
 
 
@@ -22,3 +22,37 @@ body {
   font-size: 1.3vw;
   margin-bottom: 1vw;
 }
+
+/* TABS */
+
+.containerTabContent {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.containerTabs {
+  display: flex;
+}
+
+.tab {
+  display: block;
+  cursor: pointer;
+  padding: 0.7vw;
+  border-radius: 3px;
+  background-color: rgba(255, 166, 0, 0.904);
+  }
+
+#newTabBtn {
+  border-left: none;
+}
+
+.tabContent {
+  margin-bottom: 2vw;
+  min-height: 70vh;
+  background-color: #faf0be;
+  border-radius: 5px;
+
+}
+
