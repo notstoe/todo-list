@@ -3,6 +3,7 @@
   font-size: 16px;
   --nav-bg-primary: #23232e;
   --nav-bg-secondary: #141418;
+  --nav-text: #ffffff;
 }
 
 #content {
@@ -51,10 +52,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: 3.6rem;
   width: 100%;
   cursor: pointer;
   }
+
+.tab:hover {
+  background-color: var(--nav-bg-secondary);
+}
 
 .iconNav {
   width: 100%;
@@ -75,7 +80,7 @@
   display: none;
   margin-left: 1rem;
   margin-right: 0.8rem;
-  color: white;
+  color: var(--nav-text);
   width: 100%;
 }
 
