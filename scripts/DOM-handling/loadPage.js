@@ -1,3 +1,5 @@
+import { createTab } from "./createTab";
+
 function loadPage(){
 
     // TODO - expand with methods for localStorage retrieving data later
@@ -21,26 +23,13 @@ function loadPage(){
 
     contentDiv.appendChild(titleDiv);
         
-    // TODO - NAVIGATION BAR (TABS)
+    // NAVIGATION BAR (TABS)
 
         const containerTabs = document.createElement('div');
             containerTabs.classList.add('containerTabs');
     
-            const navElement1 = document.createElement('div');
-                navElement1.classList.add('tab');
-
-                const defaultTabIcon = document.createElement('a');
-                    defaultTabIcon.style.backgroundColor = 'red';
-                    defaultTabIcon.classList.add('iconNav');
-                
-                const defaultTabText = document.createElement('span');
-                    defaultTabText.classList.add('navText');
-                    defaultTabText.textContent = 'All Categories';
-
-                navElement1.append(defaultTabIcon, defaultTabText);
-
-            const navElement2 = document.createElement('div');
-                navElement2.classList.add('tab');
+            const newTabBtn = document.createElement('div');
+                newTabBtn.classList.add('tab');
 
                 const newTabBtnIcon = document.createElement('img');
                     newTabBtnIcon.setAttribute('src','assets/undraw_add_file2_gvbb.svg');
@@ -51,11 +40,13 @@ function loadPage(){
                     newTabText.classList.add('navText');
                     newTabText.textContent = 'Add New Category';
 
-                navElement2.append(newTabBtnIcon, newTabText);
+                newTabBtn.append(newTabBtnIcon, newTabText);
 
-            containerTabs.append(navElement1, navElement2);
+            containerTabs.appendChild(newTabBtn);
 
         document.body.insertBefore(containerTabs, contentDiv);
+
+        createTab('red','All Categories');                          //creates defaultTab
 
 
     //TODO - POPULATE TAB CONTENT
