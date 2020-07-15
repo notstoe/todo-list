@@ -1,8 +1,24 @@
+:root {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
 body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: linear-gradient(to bottom right, rgb(221, 221, 221), rgb(1, 1, 221));
+}
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
 }
 
 
