@@ -20,52 +20,61 @@ function loadPage(){
         titleDiv.append(pageTitle, subtitle);
 
     contentDiv.appendChild(titleDiv);
-
-    // CONTAINER FOR TAB CONTENT + TABS
-
-        const containerTabContent = document.createElement('div');
-            containerTabContent.classList.add('containerTabContent');
-
-            //TODO - NAVIGATION BAR (TABS)
-
-            const containerTabs = document.createElement('div');
-                containerTabs.classList.add('containerTabs');
         
-                const newTabBtn = document.createElement('p');
-                    newTabBtn.textContent = '+';
-                    newTabBtn.classList.add('tab');
-                    newTabBtn.setAttribute('id', 'newTabBtn');
+    // TODO - NAVIGATION BAR (TABS)
 
-                    containerTabs.appendChild(newTabBtn);
+        const containerTabs = document.createElement('div');
+            containerTabs.classList.add('containerTabs');
+    
+            const navElement1 = document.createElement('div');
+                navElement1.classList.add('tab');
 
-                const defaultAllTab = document.createElement('p');
-                    defaultAllTab.textContent = 'All Categories';
-                    defaultAllTab.classList.add('tab');
-
-                    containerTabs.insertBefore(defaultAllTab, newTabBtn);
-
-                containerTabContent.appendChild(containerTabs);
-
-            contentDiv.appendChild(containerTabContent);
-
-
-            //TODO - POPULATE TAB CONTENT
-            // call renderTab.js later
-
-            const tabContent = document.createElement('div');
-                tabContent.classList.add('tabContent');
+                const defaultTabIcon = document.createElement('a');
+                    defaultTabIcon.style.backgroundColor = 'red';
+                    defaultTabIcon.classList.add('iconNav');
                 
-                // const sampleTask = document.createElement('div');
-                //     sampleTask.textContent = 'I\'m a sample task, get me done!';
-                // TODO - add sample task to style it
+                const defaultTabText = document.createElement('span');
+                    defaultTabText.classList.add('navText');
+                    defaultTabText.textContent = 'All Categories';
 
-                const newTodoBtn = document.createElement('p');
-                    newTodoBtn.textContent = '+ Add New Task';
-                    newTodoBtn.setAttribute('id','newTodoBtn');
-                        
-                    tabContent.appendChild(newTodoBtn);
+                navElement1.append(defaultTabIcon, defaultTabText);
 
-                containerTabContent.appendChild(tabContent);
+            const navElement2 = document.createElement('div');
+                navElement2.classList.add('tab');
+
+                const newTabBtnIcon = document.createElement('img');
+                    newTabBtnIcon.setAttribute('src','assets/undraw_add_file2_gvbb.svg');
+                    newTabBtnIcon.setAttribute('id','newTabBtn');
+                    newTabBtnIcon.classList.add('iconNav');
+                
+                const newTabText = document.createElement('span');
+                    newTabText.classList.add('navText');
+                    newTabText.textContent = 'Add New Category';
+
+                navElement2.append(newTabBtnIcon, newTabText);
+
+            containerTabs.append(navElement1, navElement2);
+
+        document.body.insertBefore(containerTabs, contentDiv);
+
+
+    //TODO - POPULATE TAB CONTENT
+    // call renderTab.js later
+
+        const tabContent = document.createElement('div');
+            tabContent.classList.add('tabContent');
+                
+        // const sampleTask = document.createElement('div');
+        //     sampleTask.textContent = 'I\'m a sample task, get me done!';
+        // TODO - add sample task to style it
+
+        const newTodoBtn = document.createElement('p');
+            newTodoBtn.textContent = '+ Add New Task';
+            newTodoBtn.setAttribute('id','newTodoBtn');
+                
+            tabContent.appendChild(newTodoBtn);
+
+        contentDiv.appendChild(tabContent);
 
         // call DOM-handling/modalNewButton.js when clicked
 

@@ -1,26 +1,14 @@
 :root {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  --nav-bg-primary: #23232e;
+  --nav-bg-secondary: #141418;
 }
 
-body {
-    margin: 0;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+#content {
+  margin-left: 5rem;
+  padding: 1rem;
 }
-
-body::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-body::-webkit-scrollbar-track {
-  background: #1e1e24;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: #6649b8;
-}
-
 
 /* TITLE AND SUBTITLE */
 
@@ -30,56 +18,81 @@ body::-webkit-scrollbar-thumb {
 }
 
 #pageTitle {
-  font-size: 4vw;
+  font-size: 50px;
   margin-bottom: 0.5vw;
 }
 
 #subtitle {
-  font-size: 1.3vw;
   margin-bottom: 1vw;
 }
 
 /* TABS */
 
-.containerTabContent {
+.containerTabs {
+  position: fixed;
   display: flex;
   flex-direction: column;
-  width: 60%;
-  margin: 0 auto;
+  justify-content: center;
+  width: 5rem;
+  height: 100vh;
+  background-color: var(--nav-bg-primary);
+  transition: width 200ms ease;
 }
 
-.containerTabs {
-  display: flex;
+.containerTabs:hover {
+  width: 16rem;
+}
+
+.tab:last-child {
+  margin-top: auto;
 }
 
 .tab {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  width: 100%;
   cursor: pointer;
-  padding: 0.7vw;
-  border-radius: 3px;
-  background-color: rgba(255, 166, 0, 0.904);
   }
 
+.iconNav {
+  width: 100%;
+  height: 45%;
+}
+
+.containerTabs:hover .iconNav {
+  width: 5.5vw;
+}
+
 #newTabBtn {
-  border-left: none;
+  padding: 1rem;
+  height: 60%;
+  width: auto;
+}
+
+.navText {
+  display: none;
+  margin-left: 1rem;
+  margin-right: 0.8rem;
+  color: white;
+  width: 100%;
+}
+
+.containerTabs:hover .navText {
+  display: block;
 }
 
 /* TABS CONTENT */
 
 .tabContent {
-  position: relative;
   margin-bottom: 2vw;
   min-height: 70vh;
   background-color: #faf0be;
   border-radius: 5px;
-
 }
 
 #newTodoBtn {
-  display: block;
-  position: absolute;
-  right: 1vw;
-  bottom: 1vw;
   margin-top: 1vw;
   padding: 0.8vw;
   width: 10vw;
