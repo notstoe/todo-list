@@ -28,6 +28,20 @@ function loadPage(){
         const containerTabs = document.createElement('div');
             containerTabs.classList.add('containerTabs');
     
+            const editRmvBtn = document.createElement('div');
+                editRmvBtn.classList.add('tab');
+                editRmvBtn.setAttribute('id', 'editRmvDiv');
+
+                const editBtn = document.createElement('span');
+                    editBtn.classList.add('navText', 'editRmvBtn');
+                    editBtn.textContent = 'Edit';
+                
+                const rmvBtn = document.createElement('span');
+                    rmvBtn.classList.add('navText', 'editRmvBtn');
+                    rmvBtn.textContent = 'Remove';
+
+                editRmvBtn.append(editBtn, rmvBtn);
+
             const newTabBtn = document.createElement('div');
                 newTabBtn.classList.add('tab');
 
@@ -42,11 +56,20 @@ function loadPage(){
 
                 newTabBtn.append(newTabBtnIcon, newTabText);
 
-            containerTabs.appendChild(newTabBtn);
+            containerTabs.append(editRmvBtn ,newTabBtn);
 
         document.body.insertBefore(containerTabs, contentDiv);
 
-        createTab('red','All Categories');                          //creates defaultTab
+        const allTab = createTab('red','All Categories');                          //creates all categories tab with reference to it (defaultTab)
+        const defaultTab = createTab('green','Personal');                     //creates defaultTab with reference to it (defaultTab)
+        const defaultTab1 = createTab('purple','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab2 = createTab('yellow','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab3 = createTab('blue','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab4 = createTab('orange','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab5 = createTab('rgb(0,255,221)','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab6 = createTab('rgb(255,255,255)','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab7 = createTab('rgb(199,80,0)','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab8 = createTab('rgb(252,65,168)','Personal');                          //creates defaultTab with reference to it (defaultTab)
 
 
     //TODO - POPULATE TAB CONTENT

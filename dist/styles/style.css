@@ -61,6 +61,7 @@
   background-color: var(--nav-bg-secondary);
 }
 
+
 .iconNav {
   width: 100%;
   height: 45%;
@@ -86,6 +87,21 @@
 
 .containerTabs:hover .navText {
   display: block;
+}
+
+#editRmvDiv:hover {                                                       /* stopping the hover effect on tab class */
+  background-color: var(--nav-bg-primary);
+}
+
+.editRmvBtn {
+  margin: 0;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+  text-align: center;
+}
+
+.editRmvBtn:hover {
+  background-color: var(--nav-bg-secondary);
 }
 
 /* TABS CONTENT */
