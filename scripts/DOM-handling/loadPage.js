@@ -15,11 +15,7 @@ function loadPage(){
             pageTitle.setAttribute('id', 'pageTitle');
             pageTitle.textContent = 'To-Do';
 
-        const subtitle = document.createElement('h2');
-            subtitle.textContent = 'Your own personal To-Do list!';
-            subtitle.setAttribute('id', 'subtitle');
-
-        titleDiv.append(pageTitle, subtitle);
+        titleDiv.append(pageTitle);
 
     contentDiv.appendChild(titleDiv);
         
@@ -28,22 +24,24 @@ function loadPage(){
         const containerTabs = document.createElement('div');
             containerTabs.classList.add('containerTabs');
     
-            const editRmvBtn = document.createElement('div');
-                editRmvBtn.classList.add('tab');
-                editRmvBtn.setAttribute('id', 'editRmvDiv');
+            const editRmvDiv = document.createElement('div');
+                editRmvDiv.setAttribute('id', 'editRmvDiv');
 
                 const editBtn = document.createElement('span');
                     editBtn.classList.add('navText', 'editRmvBtn');
+                    editBtn.setAttribute('id','editBtn');
                     editBtn.textContent = 'Edit';
                 
                 const rmvBtn = document.createElement('span');
                     rmvBtn.classList.add('navText', 'editRmvBtn');
+                    rmvBtn.setAttribute('id','rmvBtn');
                     rmvBtn.textContent = 'Remove';
 
-                editRmvBtn.append(editBtn, rmvBtn);
+                editRmvDiv.append(editBtn, rmvBtn);
 
             const newTabBtn = document.createElement('div');
                 newTabBtn.classList.add('tab');
+                newTabBtn.setAttribute('id','newTabDiv');
 
                 const newTabBtnIcon = document.createElement('img');
                     newTabBtnIcon.setAttribute('src','assets/undraw_add_file2_gvbb.svg');
@@ -56,7 +54,7 @@ function loadPage(){
 
                 newTabBtn.append(newTabBtnIcon, newTabText);
 
-            containerTabs.append(editRmvBtn ,newTabBtn);
+            containerTabs.append(editRmvDiv ,newTabBtn);
 
         document.body.insertBefore(containerTabs, contentDiv);
 
@@ -66,8 +64,8 @@ function loadPage(){
         const defaultTab2 = createTab('yellow','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab3 = createTab('blue','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab4 = createTab('orange','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab5 = createTab('rgb(0,255,221)','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab6 = createTab('rgb(255,255,255)','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab5 = createTab('rgb(255,255,255)','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab6 = createTab('rgb(0,255,221)','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab7 = createTab('rgb(199,80,0)','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab8 = createTab('rgb(252,65,168)','Personal');                          //creates defaultTab with reference to it (defaultTab)
 

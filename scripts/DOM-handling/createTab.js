@@ -22,9 +22,12 @@ function createTab(color, text){
 
     const setColor = (newColor) => tabIcon.style.backgroundColor = newColor; 
 
-    const changeText = (newText) => tabText.textContent = newText;
+    const setText = (newText) => tabText.textContent = newText;
 
-    return { setColor, changeText }
+    const setActive = () => navElement.classList.toggle('activeTab');
+
+    
+    return { setColor, setText, setActive }
 }
 
 export { createTab }
