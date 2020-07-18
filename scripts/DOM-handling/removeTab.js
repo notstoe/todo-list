@@ -9,7 +9,6 @@ function removeTab() {
         if(tab.classList.contains('activeTab'))  containerTabs.removeChild(tab);
 
     });
-
 }
 
 export { removeTab }
