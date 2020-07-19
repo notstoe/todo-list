@@ -4,6 +4,7 @@
   --nav-bg-primary: #23232e;
   --nav-bg-secondary: #141418;
   --nav-text: #ffffff;
+  --title-bg: #464658;
 }
 
 #content {
@@ -14,14 +15,42 @@
 /* TITLE AND SUBTITLE */
 
 .titleContainer {
-  margin-top: 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.6vw;
   text-align: center;
+  background-color: var(--title-bg);
+  color: var(--nav-text);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.8);
 }
 
 #pageTitle {
-  font-size: 50px;
-  margin-bottom: 0.5vw;
+  font-size: 40px;
 }
+
+#tabIndicator {
+  padding: 4.2vh 1.2vw;
+  margin-left: 3vw;
+  margin-top: -1.3vw;
+  align-self: start;
+  border-radius: 2px;
+  transition: 600ms ease;
+  box-shadow: 0px 0px 14px -4px rgba(0,0,0,0.8);
+}
+
+#helpLink {
+  font-size: 18px;
+  margin-right: 1vw;
+}
+
+#helpLink:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 /* TABS */
 
@@ -112,10 +141,11 @@
 /* TABS CONTENT */
 
 .tabContent {
-  margin-bottom: 2vw;
-  min-height: 70vh;
+  margin-bottom: 2vh;
+  min-height: 80vh;
   background-color: #faf0be;
   border-radius: 5px;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.8);
 }
 
 #newTodoBtn {
