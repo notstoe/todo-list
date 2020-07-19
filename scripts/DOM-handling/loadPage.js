@@ -15,7 +15,16 @@ function loadPage(){
             pageTitle.setAttribute('id', 'pageTitle');
             pageTitle.textContent = 'To-Do';
 
-        titleDiv.append(pageTitle);
+        const tabIndicator = document.createElement('span');
+            tabIndicator.setAttribute('id','tabIndicator');
+            tabIndicator.style.backgroundColor = 'red';
+            tabIndicator.addEventListener('click',() => tabIndicator.style.backgroundColor = 'green');
+
+        const helpLink = document.createElement('span');
+            helpLink.setAttribute('id','helpLink');
+            helpLink.textContent = 'Help';
+
+        titleDiv.append(tabIndicator, pageTitle, helpLink);
 
     contentDiv.appendChild(titleDiv);
         
