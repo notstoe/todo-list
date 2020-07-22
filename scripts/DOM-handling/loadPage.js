@@ -18,7 +18,6 @@ function loadPage(){
         const tabIndicator = document.createElement('span');
             tabIndicator.setAttribute('id','tabIndicator');
             tabIndicator.style.backgroundColor = 'red';
-            tabIndicator.addEventListener('click',() => tabIndicator.style.backgroundColor = 'green');
 
         const helpLink = document.createElement('span');
             helpLink.setAttribute('id','helpLink');
@@ -85,9 +84,39 @@ function loadPage(){
         const tabContent = document.createElement('div');
             tabContent.classList.add('tabContent');
                 
-        // const sampleTask = document.createElement('div');
-        //     sampleTask.textContent = 'I\'m a sample task, get me done!';
-        // TODO - add sample task to style it
+
+        const sampleTask = document.createElement('div');
+            sampleTask.classList.add('taskDiv');
+
+            const checkboxDiv = document.createElement('div');
+                checkboxDiv.setAttribute('id', 'checkbox');
+                checkboxDiv.classList.add('pretty', 'p-default', 'p-round', 'p-smooth');
+
+                const inputCheckBox = document.createElement('input');
+                    inputCheckBox.setAttribute('type','checkbox');
+
+                const stateDiv = document.createElement('div');
+                    stateDiv.classList.add('state');
+                    const emptyLabel = document.createElement('label');
+                    stateDiv.appendChild(emptyLabel);
+
+                checkboxDiv.append(inputCheckBox, stateDiv);
+
+            const title = document.createTextNode('I\'m a sample task, get me done!');
+
+            const editTask = document.createElement('img');
+                editTask.setAttribute('src','assets/pencil-edit-button.png');
+                editTask.setAttribute('id', 'editIcon');
+                editTask.setAttribute('alt','Edit Task');
+            
+            const removeTask = document.createElement('img');
+                removeTask.setAttribute('src','assets/trashcan.png');    
+                removeTask.setAttribute('id', 'rmvIcon');
+                removeTask.setAttribute('alt','Remove Task');
+
+                
+            sampleTask.append(checkboxDiv, title, editTask, removeTask);
+            tabContent.appendChild(sampleTask);
 
         const newTodoBtn = document.createElement('p');
             newTodoBtn.textContent = '+ Add New Task';
