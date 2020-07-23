@@ -90,13 +90,13 @@ function loadPage(){
 
             const checkboxDiv = document.createElement('div');
                 checkboxDiv.setAttribute('id', 'checkbox');
-                checkboxDiv.classList.add('pretty', 'p-default', 'p-round', 'p-smooth');
+                checkboxDiv.classList.add('pretty', 'p-round', 'p-tada');
 
                 const inputCheckBox = document.createElement('input');
                     inputCheckBox.setAttribute('type','checkbox');
 
                 const stateDiv = document.createElement('div');
-                    stateDiv.classList.add('state');
+                    stateDiv.classList.add('state', 'p-info');
                     const emptyLabel = document.createElement('label');
                     stateDiv.appendChild(emptyLabel);
 
