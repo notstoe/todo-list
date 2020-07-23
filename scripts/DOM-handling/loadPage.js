@@ -1,4 +1,5 @@
 import { createTab } from "./createTab";
+import { createTask } from "./createTask";
 
 function loadPage(){
 
@@ -17,7 +18,7 @@ function loadPage(){
 
         const tabIndicator = document.createElement('span');
             tabIndicator.setAttribute('id','tabIndicator');
-            tabIndicator.style.backgroundColor = 'red';
+            tabIndicator.style.backgroundColor = 'rgb(147, 163, 247)';
 
         const helpLink = document.createElement('span');
             helpLink.setAttribute('id','helpLink');
@@ -66,11 +67,11 @@ function loadPage(){
 
         document.body.insertBefore(containerTabs, contentDiv);
 
-        const allTab = createTab('red','All Categories');                          //creates all categories tab with reference to it (defaultTab)
+        const allTab = createTab('rgb(147, 163, 247)','All Categories');                          //creates all categories tab with reference to it (defaultTab)
         const defaultTab = createTab('green','Personal');                     //creates defaultTab with reference to it (defaultTab)
         const defaultTab1 = createTab('purple','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab2 = createTab('yellow','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab3 = createTab('blue','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        const defaultTab3 = createTab('red','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab4 = createTab('orange','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab5 = createTab('rgb(255,255,255)','Personal');                          //creates defaultTab with reference to it (defaultTab)
         const defaultTab6 = createTab('rgb(0,255,221)','Personal');                          //creates defaultTab with reference to it (defaultTab)
@@ -81,50 +82,22 @@ function loadPage(){
     //TODO - POPULATE TAB CONTENT
     // call renderTab.js later
 
-        const tabContent = document.createElement('div');
-            tabContent.classList.add('tabContent');
-                
-
-        const sampleTask = document.createElement('div');
-            sampleTask.classList.add('taskDiv');
-
-            const checkboxDiv = document.createElement('div');
-                checkboxDiv.setAttribute('id', 'checkbox');
-                checkboxDiv.classList.add('pretty', 'p-round', 'p-tada');
-
-                const inputCheckBox = document.createElement('input');
-                    inputCheckBox.setAttribute('type','checkbox');
-
-                const stateDiv = document.createElement('div');
-                    stateDiv.classList.add('state', 'p-info');
-                    const emptyLabel = document.createElement('label');
-                    stateDiv.appendChild(emptyLabel);
-
-                checkboxDiv.append(inputCheckBox, stateDiv);
-
-            const title = document.createTextNode('I\'m a sample task, get me done!');
-
-            const editTask = document.createElement('img');
-                editTask.setAttribute('src','assets/pencil-edit-button.png');
-                editTask.setAttribute('id', 'editIcon');
-                editTask.setAttribute('alt','Edit Task');
-            
-            const removeTask = document.createElement('img');
-                removeTask.setAttribute('src','assets/trashcan.png');    
-                removeTask.setAttribute('id', 'rmvIcon');
-                removeTask.setAttribute('alt','Remove Task');
-
-                
-            sampleTask.append(checkboxDiv, title, editTask, removeTask);
-            tabContent.appendChild(sampleTask);
+        const taskContainer = document.createElement('div');
+            taskContainer.classList.add('taskContainer');
 
         const newTodoBtn = document.createElement('p');
             newTodoBtn.textContent = '+ Add New Task';
             newTodoBtn.setAttribute('id','newTodoBtn');
                 
-            tabContent.appendChild(newTodoBtn);
+            taskContainer.appendChild(newTodoBtn);
 
-        contentDiv.appendChild(tabContent);
+        contentDiv.appendChild(taskContainer);
+
+        createTask('23/07','I\'m a sample task, get me done!');
+        createTask('24/07','I\'m a sample task too, get me done!');
+        createTask('25/07','I\'m a sample task too, get me done!');
+        createTask('26/07','I\'m a sample task too, get me done!');
+        createTask('27/07','I\'m a sample task too, get me done!');
 
         // call DOM-handling/modalNewButton.js when clicked
 

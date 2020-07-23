@@ -20,6 +20,7 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 0.6vw;
+  margin-bottom: 1vw;
   text-align: center;
   background-color: var(--title-bg);
   color: var(--nav-text);
@@ -140,9 +141,9 @@
 }
 
 
-/* TABS CONTENT */
+/* TASKS CONTAINER */
 
-.tabContent {
+.taskContainer {
   margin-bottom: 2vh;
   min-height: 80vh;
   background-color: var(--bg-content);
@@ -154,18 +155,42 @@
   position: relative;
   margin-top: 1vh;
   padding: 1vw;
+  transition: box-shadow 160ms;
+}
+
+.taskDiv:hover {
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.8);
+  border-radius: 6px;
+}
+
+#dueDate {
+  margin-left: -8px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#taskTitle:hover {
+  cursor: pointer;
 }
 
 #editIcon {
   position: absolute;
-  right: 5vw;
+  right: 75px;
   width: 1.6vw;
+  top: 11px;
 }
 
 #rmvIcon {
   position: absolute;
-  right: 1.5vw;
+  right: 25px;
+  top: 10px;
   width: 1.1vw;
+}
+
+#rmvIcon:hover, #editIcon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 120ms ease;
 }
 
 #newTodoBtn {
