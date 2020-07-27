@@ -1,3 +1,6 @@
+import { createTask } from './DOM-handling/createTask'
+import { format } from 'date-fns'
+
 function newTaskModal(){
 
     const newTaskModal = document.createElement('div');
@@ -69,7 +72,19 @@ function newTaskModal(){
         });
 
         submitBtn.addEventListener('click', () => {
-            console.log(inputTitle.value, inputDate.value, inputDescript.value);
+
+            let dateArr = inputDate.value.split('-');                                  //date as string: yyyy-mm-dd into [yyyy, mm, dd]
+
+            let dateFormated = format(new Date(dateArr[0], dateArr[1], dateArr[2]), 'dd-MM-yyyy');
+
+            createTask(dateFormated, inputTitle.value, inputDescript.value);
+
+            inputDate.value = '';
+            inputTitle.value = '';
+            inputDescript.value = '';
+
+            newTaskModal.classList.toggle('hideElement');
+            newTaskmodalOverlay.classList.toggle('hideElement');
 
         });
 
