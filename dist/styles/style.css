@@ -6,6 +6,7 @@
   --nav-text: #ffffff;
   --title-bg: #464658;
   --bg-content: #faf0be;
+  --task-done: rgb(134, 134, 134);
 }
 
 #content {
@@ -204,5 +205,29 @@
 #newTodoBtn:hover {
   background-color: hsl(51, 50%, 77%);
   cursor: pointer;
+}
+
+.hideElement {
+  display: none;
+}
+
+.taskDescript {
+  margin: 1.9vh 0 2.5vh 0.3vw;
+  max-width: 39vw;
+  min-height: 7vh;
+  border: 1px gray inset;
+  border-radius: 4px;
+  padding: 0.6vw;
+  text-align: justify;
+}
+
+.activeTask {
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.8);
+  border-radius: 6px;
+}
+
+.taskDone {
+  color: var(--task-done);
+  text-decoration: line-through;
 }
 

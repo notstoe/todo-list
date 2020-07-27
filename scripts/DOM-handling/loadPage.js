@@ -70,13 +70,6 @@ function loadPage(){
         const allTab = createTab('rgb(147, 163, 247)','All Categories');                          //creates all categories tab with reference to it (defaultTab)
         const defaultTab = createTab('green','Personal');                     //creates defaultTab with reference to it (defaultTab)
         const defaultTab1 = createTab('purple','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab2 = createTab('yellow','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab3 = createTab('red','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab4 = createTab('orange','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab5 = createTab('rgb(255,255,255)','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab6 = createTab('rgb(0,255,221)','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab7 = createTab('rgb(199,80,0)','Personal');                          //creates defaultTab with reference to it (defaultTab)
-        const defaultTab8 = createTab('rgb(252,65,168)','Personal');                          //creates defaultTab with reference to it (defaultTab)
 
 
     //TODO - POPULATE TAB CONTENT
@@ -93,11 +86,11 @@ function loadPage(){
 
         contentDiv.appendChild(taskContainer);
 
-        createTask('23/07','I\'m a sample task, get me done!');
-        createTask('24/07','I\'m a sample task too, get me done!');
-        createTask('25/07','I\'m a sample task too, get me done!');
-        createTask('26/07','I\'m a sample task too, get me done!');
-        createTask('27/07','I\'m a sample task too, get me done!');
+        createTask('23/07','I\'m a sample task, get me done!', 'testing full description');
+        createTask('24/07','I\'m a sample task too, get me done!', 'testing full description');
+        createTask('25/07','I\'m a sample task too, get me done!', 'testing full description');
+        createTask('26/07','I\'m a sample task too, get me done!', 'testing full description');
+        createTask('27/07','I\'m a sample task too, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
 
         // call DOM-handling/modalNewButton.js when clicked
 
