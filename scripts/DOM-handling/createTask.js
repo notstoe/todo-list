@@ -1,48 +1,63 @@
 
-function createTask(dueDate, title) {
+import { expandTask } from './expandTask'
+import { markTaskDone } from './markTaskDone'
 
-    const newTask = document.createElement('div');
-        newTask.classList.add('taskDiv');
+function createTask(dueDate, title, description) {
 
-    const checkboxDiv = document.createElement('div');
-        checkboxDiv.setAttribute('id', 'checkbox');
-        checkboxDiv.classList.add('pretty', 'p-round', 'p-tada');
+    const fullTask = document.createElement('div');
 
-        const inputCheckBox = document.createElement('input');
-            inputCheckBox.setAttribute('type','checkbox');
+        const newTask = document.createElement('div');
+            newTask.classList.add('taskDiv');
 
-        const stateDiv = document.createElement('div');
-            stateDiv.classList.add('state', 'p-info');
-            const emptyLabel = document.createElement('label');
-            stateDiv.appendChild(emptyLabel);
+            const checkboxDiv = document.createElement('div');
+                checkboxDiv.setAttribute('id', 'checkbox');
+                checkboxDiv.classList.add('pretty', 'p-round', 'p-tada');
 
-        checkboxDiv.append(inputCheckBox, stateDiv);
+                const inputCheckBox = document.createElement('input');
+                    inputCheckBox.setAttribute('type','checkbox');
 
-    const date = document.createElement('span');
-        date.textContent = dueDate;
-        date.setAttribute('id','dueDate');
+                const stateDiv = document.createElement('div');
+                    stateDiv.classList.add('state', 'p-info');
+                    const emptyLabel = document.createElement('label');
+                    stateDiv.appendChild(emptyLabel);
 
-    const separator = document.createTextNode('\xa0\xa0-\xa0\xa0');                     //to separate date from title
+                checkboxDiv.append(inputCheckBox, stateDiv);
 
-    const taskTitle = document.createElement('span');
-        taskTitle.textContent = title;
-        taskTitle.setAttribute('id', 'taskTitle');
+            const date = document.createElement('span');
+                date.textContent = dueDate;
+                date.setAttribute('id','dueDate');
 
-    const editTask = document.createElement('img');
-        editTask.setAttribute('src','assets/pencil-edit-button.png');
-        editTask.setAttribute('id', 'editIcon');
-        editTask.setAttribute('alt','Edit Task');
-    
-    const removeTask = document.createElement('img');
-        removeTask.setAttribute('src','assets/trashcan.png');    
-        removeTask.setAttribute('id', 'rmvIcon');
-        removeTask.setAttribute('alt','Remove Task');
+            const separator = document.createTextNode('\xa0\xa0-\xa0\xa0');                     //to separate date from title
 
+            const taskTitle = document.createElement('span');
+                taskTitle.textContent = title;
+                taskTitle.setAttribute('id', 'taskTitle');
+
+            const editTask = document.createElement('img');
+                editTask.setAttribute('src','assets/pencil-edit-button.png');
+                editTask.setAttribute('id', 'editIcon');
+                editTask.setAttribute('alt','Edit Task');
+            
+            const removeTask = document.createElement('img');
+                removeTask.setAttribute('src','assets/trashcan.png');    
+                removeTask.setAttribute('id', 'rmvIcon');
+                removeTask.setAttribute('alt','Remove Task');
         
-    newTask.append(checkboxDiv, date, separator, taskTitle, editTask, removeTask);
+        newTask.append(checkboxDiv, date, separator, taskTitle, editTask, removeTask);
+
+        const taskDescript = document.createElement('p');
+            taskDescript.classList.add('taskDescript', 'hideElement');
+            taskDescript.textContent = description;
     
+        fullTask.append(newTask, taskDescript);
+
+
     const taskContainer = document.querySelector('.taskContainer');
-        taskContainer.insertBefore(newTask, taskContainer.lastChild);        
+        taskContainer.insertBefore(fullTask, taskContainer.lastChild);        
+
+
+taskTitle.addEventListener('click', expandTask);
+inputCheckBox.addEventListener('click', markTaskDone);
 }
 
 export { createTask }
