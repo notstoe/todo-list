@@ -1,5 +1,6 @@
 import { createTab } from "./createTab";
 import { createTask } from "./createTask";
+import { newTaskModal } from '../newTaskBtnModal';
 
 function loadPage(){
 
@@ -72,8 +73,7 @@ function loadPage(){
         const defaultTab1 = createTab('purple','Personal');                          //creates defaultTab with reference to it (defaultTab)
 
 
-    //TODO - POPULATE TAB CONTENT
-    // call renderTab.js later
+    // TASKS CONTENT
 
         const taskContainer = document.createElement('div');
             taskContainer.classList.add('taskContainer');
@@ -92,7 +92,18 @@ function loadPage(){
         createTask('26/07','I\'m a sample task too, get me done!', 'testing full description');
         createTask('27/07','I\'m a sample task too, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
 
-        // call DOM-handling/modalNewButton.js when clicked
+        newTaskModal();                         //creates task modal on the DOM, hidden by default
+
+        // EVENT LISTENERS
+
+        newTodoBtn.addEventListener('click', () => {
+                
+            const taskModal = document.querySelector('.newTaskModal');
+            const taskModalOverlay = document.querySelector('.newTaskModalOverlay');
+           
+            taskModal.classList.toggle('hideElement');
+            taskModalOverlay.classList.toggle('hideElement');
+        });
 
 }
 
