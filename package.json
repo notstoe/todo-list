@@ -13,6 +13,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
+    "date-fns": "^2.15.0",
     "pretty-checkbox": "^3.0.3"
   }
 }
