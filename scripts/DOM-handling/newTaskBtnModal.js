@@ -76,7 +76,8 @@ function newTaskModal(){
 
             let dateArr = inputDate.value.split('-');                                  //date as string: yyyy-mm-dd into [yyyy, mm, dd]
 
-            let dateFormated = format(new Date(dateArr[0], dateArr[1], dateArr[2]), 'dd-MM-yyyy');
+            let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');
+
             
             createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
         
