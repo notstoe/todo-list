@@ -1,10 +1,12 @@
-import { createTask } from './DOM-handling/createTask'
+import { createTask } from './createTask'
 import { format } from 'date-fns'
+import { toggleNewTaskModal } from './toggleNewTaskModal';
 
 function newTaskModal(){
 
     const newTaskModal = document.createElement('div');
         newTaskModal.classList.add('newTaskModal', 'hideElement');
+        newTaskModal.setAttribute('id', 'newTaskModal');
 
         const titleContainer = document.createElement('div');
             titleContainer.classList.add('titleModalNewTask');
@@ -54,42 +56,40 @@ function newTaskModal(){
 
         newTaskModal.append(titleContainer, labelTitle, inputTitle, labelDate, inputDate, labelDescript, inputDescript, submitBtn);
 
-    const newTaskmodalOverlay = document.createElement('div');
-        newTaskmodalOverlay.classList.add('newTaskModalOverlay', 'hideElement');
+    const newTaskModalOverlay = document.createElement('div');
+        newTaskModalOverlay.classList.add('newTaskModalOverlay', 'hideElement');
+        newTaskModalOverlay.setAttribute('id', 'newTaskModalOverlay');
 
     //LISTENERS FOR TASK MODAL
         
-        closeBtn.addEventListener('click', () => {
-            newTaskModal.classList.toggle('hideElement');
-            newTaskmodalOverlay.classList.toggle('hideElement');
-        });
+        closeBtn.addEventListener('click', toggleNewTaskModal);
 
-        window.addEventListener('click', (e) => {
-            if (e.target == newTaskmodalOverlay) {
-                newTaskModal.classList.toggle('hideElement');
-                newTaskmodalOverlay.classList.toggle('hideElement');
-            }
-        });
+        window.addEventListener('click', (e) => {if (e.target == newTaskModalOverlay) toggleNewTaskModal(); });
 
         submitBtn.addEventListener('click', () => {
+
+            if (inputDate.value === '' || inputTitle.value === '') {
+
+                alert ('Ops, looks like you forgot to add a Title and/or a due Date');
+                return;
+            }
 
             let dateArr = inputDate.value.split('-');                                  //date as string: yyyy-mm-dd into [yyyy, mm, dd]
 
             let dateFormated = format(new Date(dateArr[0], dateArr[1], dateArr[2]), 'dd-MM-yyyy');
-
-            createTask(dateFormated, inputTitle.value, inputDescript.value);
-
+            
+            createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
+        
             inputDate.value = '';
             inputTitle.value = '';
             inputDescript.value = '';
 
-            newTaskModal.classList.toggle('hideElement');
-            newTaskmodalOverlay.classList.toggle('hideElement');
+            toggleNewTaskModal();
 
         });
 
 
-    document.body.append(newTaskModal, newTaskmodalOverlay);
+    document.body.append(newTaskModal, newTaskModalOverlay);
 }
 
 

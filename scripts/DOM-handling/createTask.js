@@ -1,7 +1,7 @@
-
-import { expandTask } from './expandTask'
-import { markTaskDone } from './markTaskDone'
-import { removeTask } from './removeTask'
+import { expandTask } from './expandTask';
+import { markTaskDone } from './markTaskDone';
+import { removeTask } from './removeTask';
+import { toggleEditTaskModal } from './toggleEditTaskModal';
 
 function createTask(dueDate, title, description) {
 
@@ -59,9 +59,10 @@ function createTask(dueDate, title, description) {
 
 // ADDING LISTENERS FOR ACTIONS ON A TASK
 
-taskTitle.addEventListener('click', expandTask);
-inputCheckBox.addEventListener('click', markTaskDone);
-rmvTask.addEventListener('click', removeTask);
+    taskTitle.addEventListener('click', expandTask);
+    inputCheckBox.addEventListener('click', markTaskDone);
+    rmvTask.addEventListener('click', removeTask);
+    editTask.addEventListener('click', toggleEditTaskModal);
 }
 
 export { createTask }

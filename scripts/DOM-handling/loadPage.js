@@ -1,6 +1,8 @@
 import { createTab } from "./createTab";
 import { createTask } from "./createTask";
-import { newTaskModal } from '../newTaskBtnModal';
+import { newTaskModal } from './newTaskBtnModal';
+import { toggleNewTaskModal } from './toggleNewTaskModal';
+import { editTaskModal } from './editTaskModal';
 
 function loadPage(){
 
@@ -86,24 +88,19 @@ function loadPage(){
 
         contentDiv.appendChild(taskContainer);
 
-        createTask('23/07','I\'m a sample task, get me done!', 'testing full description');
-        createTask('24/07','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('25/07','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('26/07','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('27/07','I\'m a sample task too, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
+        createTask('23/07/2020','I\'m a sample task, get me done!', 'testing full description');
+        createTask('24/07/2020','I\'m a sample task too, get me done!', 'testing full description');
+        createTask('25/07/2020','I\'m a sample task too, get me done!', 'testing full description');
+        createTask('26/07/2020','I\'m a sample task too, get me done!', 'testing full description');
+        createTask('27/07/2020','I\'m a sample task too, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
 
-        newTaskModal();                         //creates task modal on the DOM, hidden by default
+        newTaskModal();                         //creates new task modal on the DOM, hidden by default
+
+        editTaskModal();                        // creates edit task modal on the DOM, hidden by default
 
         // EVENT LISTENERS
 
-        newTodoBtn.addEventListener('click', () => {
-                
-            const taskModal = document.querySelector('.newTaskModal');
-            const taskModalOverlay = document.querySelector('.newTaskModalOverlay');
-           
-            taskModal.classList.toggle('hideElement');
-            taskModalOverlay.classList.toggle('hideElement');
-        });
+        newTodoBtn.addEventListener('click', toggleNewTaskModal);
 
 }
 
