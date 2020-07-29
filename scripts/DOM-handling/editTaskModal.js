@@ -1,6 +1,8 @@
 import { format } from 'date-fns'
 import { toggleEditTaskModal } from './toggleEditTaskModal';
 
+// creates editTaskModal in the DOM
+
 function editTaskModal(){
 
     const editTaskModal = document.createElement('div');
@@ -65,27 +67,36 @@ function editTaskModal(){
 
         window.addEventListener('click', (e) => {if (e.target == editTaskModalOverlay) toggleEditTaskModal(); });
 
-        // submitBtn.addEventListener('click', () => {
+        submitBtn.addEventListener('click', () => {
 
-        //     if (inputDate.value === '' || inputTitle.value === '') {
+            if (inputDate.value === '' || inputTitle.value === '') {
 
-        //         alert ('Ops, looks like you forgot to add a Title and/or a due Date');
-        //         return;
-        //     }
+                alert ('Ops, looks like you forgot to add a Title and/or a due Date');
+                return;
+            }
 
-        //     let dateArr = inputDate.value.split('-');                                  //date as string: yyyy-mm-dd into [yyyy, mm, dd]
-
-        //     let dateFormated = format(new Date(dateArr[0], dateArr[1], dateArr[2]), 'dd-MM-yyyy');
+            let dateArr = inputDate.value.split('-');                                               //date as string: yyyy-mm-dd into [yyyy, mm, dd]
+            let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');
             
-        //     createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
-        
-        //     inputDate.value = '';
-        //     inputTitle.value = '';
-        //     inputDescript.value = '';
+            const tasksTitles = document.querySelectorAll('#taskTitle');
+                tasksTitles.forEach((taskTitle) => { 
+                    
+                    if (taskTitle.textContent === inputTitle.value) {                               //FIXME - changed title on input lost reference to item
+0
+                        let dueDateNode = taskTitle.parentNode.childNodes[1];
+                        let titleNode = taskTitle;                                                  //for better readbility
+                        let descriptNode = taskTitle.parentNode.parentNode.lastChild;
 
-        //     toggleNewTaskModal();
+                        dueDateNode.textContent = dateFormated.split('-').join('/');                                      
+                        // titleNode.textContent = inputTitle.value;
+                        descriptNode.textContent = inputDescript.value;
+                    }
 
-        // });
+                });
+
+            toggleEditTaskModal();
+            
+        });
 
 
     document.body.append(editTaskModal, editTaskModalOverlay);

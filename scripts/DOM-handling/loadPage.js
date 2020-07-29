@@ -90,9 +90,9 @@ function loadPage(){
 
         createTask('23/07/2020','I\'m a sample task, get me done!', 'testing full description');
         createTask('24/07/2020','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('25/07/2020','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('26/07/2020','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('27/07/2020','I\'m a sample task too, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
+        createTask('25/07/2020','I\'m a sample task also, get me done!', 'testing full description');
+        createTask('26/07/2020','I\'m a sample task again, get me done!', 'testing full description');
+        createTask('27/07/2020','I\'m a sample task one more time, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
 
         newTaskModal();                         //creates new task modal on the DOM, hidden by default
 
