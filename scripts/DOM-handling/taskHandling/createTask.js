@@ -39,11 +39,13 @@ function createTask(dueDate, title, description) {
                 editTask.setAttribute('src','assets/pencil-edit-button.png');
                 editTask.setAttribute('id', 'editIcon');
                 editTask.setAttribute('alt','Edit Task');
+                editTask.classList.add('hideElement');
             
             const rmvTask = document.createElement('img');
                 rmvTask.setAttribute('src','assets/trashcan.png');    
                 rmvTask.setAttribute('id', 'rmvIcon');
                 rmvTask.setAttribute('alt','Remove Task');
+                rmvTask.classList.add('hideElement');
         
         newTask.append(checkboxDiv, date, separator, taskTitle, editTask, rmvTask);
 

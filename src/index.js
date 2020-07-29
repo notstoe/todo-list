@@ -1,5 +1,5 @@
 import { loadPage } from '../scripts/DOM-handling/loadPage'
-import { removeTab } from '../scripts/DOM-handling/tabsHandling/removeTab'
+import { removeTab } from '../scripts/DOM-handling/tabHandling/removeTab'
 
 
 loadPage();

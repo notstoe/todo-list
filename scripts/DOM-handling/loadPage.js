@@ -1,4 +1,4 @@
-import { createTab } from "./tabsHandling/createTab";
+import { createTab } from "./tabHandling/createTab";
 import { createTask } from "./taskHandling/createTask";
 import { newTaskModal } from './modals/newTaskModal';
 import { toggleNewTaskModal } from './modals/newTaskModal';
