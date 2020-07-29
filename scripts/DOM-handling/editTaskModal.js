@@ -1,9 +1,13 @@
 import { format } from 'date-fns'
 import { toggleEditTaskModal } from './toggleEditTaskModal';
 
-// creates editTaskModal in the DOM
+// creates editTaskModal in the DOM hiddden by default
 
-function editTaskModal(){
+function editTaskModal(e){
+
+    const taskDate = e.target.parentNode.childNodes[1];                                 //saves the reference to the task node clicked for editing
+    const taskTitle = e.target.parentNode.childNodes[3];
+    const taskDescript = e.target.parentNode.parentNode.lastChild.firstChild;
 
     const editTaskModal = document.createElement('div');
         editTaskModal.classList.add('newTaskModal', 'hideElement');                 //using the same class to preserve the styling
@@ -77,25 +81,12 @@ function editTaskModal(){
 
             let dateArr = inputDate.value.split('-');                                               //date as string: yyyy-mm-dd into [yyyy, mm, dd]
             let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');
-            
-            const tasksTitles = document.querySelectorAll('#taskTitle');
-                tasksTitles.forEach((taskTitle) => { 
-                    
-                    if (taskTitle.textContent === inputTitle.value) {                               //FIXME - changed title on input lost reference to item
-0
-                        let dueDateNode = taskTitle.parentNode.childNodes[1];
-                        let titleNode = taskTitle;                                                  //for better readbility
-                        let descriptNode = taskTitle.parentNode.parentNode.lastChild;
 
-                        dueDateNode.textContent = dateFormated.split('-').join('/');                                      
-                        // titleNode.textContent = inputTitle.value;
-                        descriptNode.textContent = inputDescript.value;
-                    }
-
-                });
+            taskDate.textContent = dateFormated.split('-').join('/');                                      
+            taskTitle.textContent = inputTitle.value;
+            taskDescript.textContent = inputDescript.value;
 
             toggleEditTaskModal();
-            
         });
 
 

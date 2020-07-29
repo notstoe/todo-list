@@ -2,7 +2,6 @@ import { createTab } from "./createTab";
 import { createTask } from "./createTask";
 import { newTaskModal } from './newTaskBtnModal';
 import { toggleNewTaskModal } from './toggleNewTaskModal';
-import { editTaskModal } from './editTaskModal';
 
 function loadPage(){
 
@@ -95,8 +94,6 @@ function loadPage(){
         createTask('27/07/2020','I\'m a sample task one more time, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
 
         newTaskModal();                         //creates new task modal on the DOM, hidden by default
-
-        editTaskModal();                        // creates edit task modal on the DOM, hidden by default
 
         // EVENT LISTENERS
 

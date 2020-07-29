@@ -2,6 +2,7 @@ import { expandTask } from './expandTask';
 import { markTaskDone } from './markTaskDone';
 import { removeTask } from './removeTask';
 import { toggleEditTaskModal } from './toggleEditTaskModal';
+import { editTaskModal } from './editTaskModal';
 
 function createTask(dueDate, title, description) {
 
@@ -62,7 +63,10 @@ function createTask(dueDate, title, description) {
     taskTitle.addEventListener('click', expandTask);
     inputCheckBox.addEventListener('click', markTaskDone);
     rmvTask.addEventListener('click', removeTask);
-    editTask.addEventListener('click', toggleEditTaskModal);
+    editTask.addEventListener('click', (e) => {
+        editTaskModal(e);                        // creates edit task modal on the DOM, hidden by default
+        toggleEditTaskModal(e);
+    });
 }
 
 export { createTask }
