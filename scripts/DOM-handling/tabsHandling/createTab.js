@@ -26,7 +26,7 @@ function createTab(color, text){
 
     const setActive = () => navElement.classList.toggle('activeTab');
 
-    
+
     return { setColor, setText, setActive }
 }
 

@@ -1,8 +1,8 @@
 import { expandTask } from './expandTask';
 import { markTaskDone } from './markTaskDone';
 import { removeTask } from './removeTask';
-import { toggleEditTaskModal } from './editTaskModal';
-import { editTaskModal } from './editTaskModal';
+import { toggleEditTaskModal } from '../modals/editTaskModal';
+import { editTaskModal } from '../modals/editTaskModal';
 
 function createTask(dueDate, title, description) {
 

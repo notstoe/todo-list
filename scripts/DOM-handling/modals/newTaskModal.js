@@ -1,6 +1,5 @@
-import { createTask } from './createTask'
+import { createTask } from '../taskHandling/createTask'
 import { format } from 'date-fns'
-import { toggleNewTaskModal } from './toggleNewTaskModal';
 
 function newTaskModal(){
 
@@ -94,4 +93,14 @@ function newTaskModal(){
 }
 
 
-export { newTaskModal }
+function toggleNewTaskModal(e){    
+
+    const taskModal = document.querySelector('#newTaskModal');
+    const taskModalOverlay = document.querySelector('#newTaskModalOverlay');
+           
+        taskModal.classList.toggle('hideElement');
+        taskModalOverlay.classList.toggle('hideElement');
+     
+}
+
+export { newTaskModal, toggleNewTaskModal }

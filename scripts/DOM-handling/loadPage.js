@@ -1,7 +1,7 @@
-import { createTab } from "./createTab";
-import { createTask } from "./createTask";
-import { newTaskModal } from './newTaskBtnModal';
-import { toggleNewTaskModal } from './toggleNewTaskModal';
+import { createTab } from "./tabsHandling/createTab";
+import { createTask } from "./taskHandling/createTask";
+import { newTaskModal } from './modals/newTaskModal';
+import { toggleNewTaskModal } from './modals/newTaskModal';
 
 function loadPage(){
 
