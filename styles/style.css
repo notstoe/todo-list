@@ -192,7 +192,7 @@
 #rmvIcon:hover, #editIcon:hover {
   cursor: pointer;
   transform: scale(1.1);
-  transition: 120ms ease;
+  transition: all 120ms ease;
 }
 
 #newTodoBtn {
