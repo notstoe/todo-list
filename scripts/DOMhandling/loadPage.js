@@ -2,6 +2,9 @@ import { createTab } from "./tabHandling/createTab";
 import { createTask } from "./taskHandling/createTask";
 import { newTaskModal } from './modals/newTaskModal';
 import { toggleNewTaskModal } from './modals/newTaskModal';
+import { newTabModal } from './modals/newTabModal';
+import { toggleNewTabModal } from './modals/newTabModal'
+import { removeTab } from './tabHandling/removeTab'
 
 function loadPage(){
 
@@ -69,9 +72,17 @@ function loadPage(){
 
         document.body.insertBefore(containerTabs, contentDiv);
 
-        const allTab = createTab('rgb(147, 163, 247)','All Categories');                          //creates all categories tab with reference to it (defaultTab)
-        const defaultTab = createTab('green','Personal');                     //creates defaultTab with reference to it (defaultTab)
-        const defaultTab1 = createTab('purple','Personal');                          //creates defaultTab with reference to it (defaultTab)
+        newTabModal();                                                              //creates modal for new tabs on the DOM
+
+        const allTab = createTab('rgb(147, 163, 247)','All Categories');             //creates 'all categories' tab with reference to it (defaultTab)
+        const defaultTab = createTab('green','Sample Tab');                            
+        const defaultTab1 = createTab('purple','Sample Tab');                          
+
+    // TABS EVENT LISTENERS
+    
+        rmvBtn.addEventListener('click', removeTab);
+
+        newTabBtn.addEventListener('click', toggleNewTabModal);
 
 
     // TASKS CONTENT

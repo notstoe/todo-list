@@ -17,17 +17,18 @@ function editTaskModal(e){
     const taskDescript = e.target.parentNode.parentNode.lastChild.firstChild;
 
     const editTaskModal = document.createElement('div');
-        editTaskModal.classList.add('newTaskModal', 'hideElement');                 //using the same class to preserve the styling
+        editTaskModal.classList.add('modal', 'hideElement');                 //using the same class to preserve the styling
         editTaskModal.setAttribute('id', 'editTaskModal');
 
         const titleContainer = document.createElement('div');
-            titleContainer.classList.add('titleModalNewTask');
+            titleContainer.classList.add('titleModal');
 
             const title = document.createElement('h1');
-                title.setAttribute('id', 'newTaskTitle');
                 title.textContent = 'Edit current task';
+                title.classList.add('taskTitle');
+                
             const closeBtn = document.createElement('span');
-                closeBtn.setAttribute('id','closeNewTask');
+                closeBtn.classList.add('closeModal');
                 closeBtn.textContent = '\u00D7';
             
             titleContainer.append(title, closeBtn);
@@ -35,41 +36,41 @@ function editTaskModal(e){
         const labelTitle = document.createElement('label');
             labelTitle.setAttribute('for', 'inputTitleEdit');
             labelTitle.textContent = 'Title:';
-            labelTitle.classList.add('newTaskLabel');
+            labelTitle.classList.add('modalLabel');
 
 
         const inputTitle = document.createElement('input');
             inputTitle.setAttribute('type', 'text');
             inputTitle.setAttribute('name', 'inputTitleEdit');
-            inputTitle.setAttribute('id', 'inputTitle');                
+            inputTitle.classList.add('inputTitle');                
 
         const labelDate = document.createElement('label');
             labelDate.setAttribute('for', 'inputDateEdit');
             labelDate.textContent = 'Due Date:';
-            labelDate.classList.add('newTaskLabel');
+            labelDate.classList.add('modalLabel');
 
         const inputDate = document.createElement('input');
             inputDate.setAttribute('type', 'date');
             inputDate.setAttribute('name', 'inputDateEdit');
-            inputDate.setAttribute('id', 'inputDate');
+            inputDate.classList.add('inputDate');
 
         const labelDescript = document.createElement('label');
             labelDescript.setAttribute('for', 'inputDescriptEdit');
             labelDescript.textContent = 'Task Description:';
-            labelDescript.classList.add('newTaskLabel');
+            labelDescript.classList.add('modalLabel');
 
         const inputDescript = document.createElement('textarea');
             inputDescript.setAttribute('name', 'inputDescriptEdit');
-            inputDescript.setAttribute('id', 'inputDescript');
+            inputDescript.classList.add('inputDescript');
 
         const submitBtn = document.createElement('button');
-            submitBtn.setAttribute('id', 'submitNewTask');
+            submitBtn.classList.add('submitBtn');
             submitBtn.textContent = 'Submit Changes';
 
         editTaskModal.append(titleContainer, labelTitle, inputTitle, labelDate, inputDate, labelDescript, inputDescript, submitBtn);
 
     const editTaskModalOverlay = document.createElement('div');
-        editTaskModalOverlay.classList.add('newTaskModalOverlay', 'hideElement');
+        editTaskModalOverlay.classList.add('modalOverlay', 'hideElement');
         editTaskModalOverlay.setAttribute('id', 'editTaskModalOverlay');
 
     //LISTENERS FOR TASK MODAL
