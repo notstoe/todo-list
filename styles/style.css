@@ -229,7 +229,7 @@
 
 /* MODAL */
 
-.modal {         /*.newTaskModal*/
+.modal {        
 
   display: flex;
   flex-direction: column;
@@ -250,7 +250,7 @@
   box-shadow: 0px 0px 10px black;
 }
 
-.modalOverlay {           /*.newTaskModalOverlay*/
+.modalOverlay {          
 
   position: fixed;
   z-index: 1000;
@@ -261,17 +261,17 @@
   background-color: rgba(0, 0, 0, 0.418);
 }
 
-.titleModal {               /*.titleModalNewTask*/
+.titleModal {              
   display: flex;
   justify-content: space-between;
   padding: 1vh 0.6vw;
 }
 
-.taskTitle {           /*#newTaskTitle*/
+.taskTitle {           
   align-self: center;
 }
 
-.closeModal{          /*#closeNewTask*/
+.closeModal{          
   color: #aaa;
   font-size: 30px;
   font-weight: bold;
@@ -284,7 +284,7 @@
   cursor: pointer;
 }
 
-.inputTitle, .inputDate, .inputDescript { /*#input...*/
+.inputTitle, .inputDate, .inputDescript { 
   align-self: center;
   margin-top: -4vh;
   width: 30vw;
@@ -307,12 +307,12 @@
   text-align: center;
 }
 
-.modalLabel {                 /*.newTaskLabel*/
+.modalLabel {                
   margin-left: 1vw;
   align-self: start;
 }
 
-.submitBtn {              /*#submitNewTask*/
+.submitBtn {             
   align-self: center;
   width: 16vw;
   max-width: 100%;
@@ -338,5 +338,27 @@
 
 .hideElement {                                                            
   display: none;
+}
+
+/* MODAL NEW CATEGORY */
+
+.inputColorCategory {
+  width: 100px;
+  max-width: 25%;
+  height: 92px;
+  max-height: 20%;
+  border: none;
+  padding: 0;    
+  cursor: pointer;
+  margin-bottom: -15px;
+}
+
+.tabModal {
+  height: 71vh;
+  width: 30vw;
+}
+
+.inputTitleCategory {
+  width: 27.1vw;
 }
 
