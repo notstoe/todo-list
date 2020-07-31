@@ -8,8 +8,8 @@ function expandTask(e){
     const checkBox = e.target.parentNode.childNodes[0].firstChild;
 
     taskDescript.classList.toggle('hideElement');                                       
-    e.target.parentNode.parentNode.firstChild.classList.toggle('activeTask');           //targets task Div
     editBtn.classList.toggle('hideElement');  
+    e.target.parentNode.parentNode.firstChild.classList.toggle('activeTask');           //targets task Div
 
     if (!checkBox.checked) rmvBtn.classList.toggle('hideElement');
 }
