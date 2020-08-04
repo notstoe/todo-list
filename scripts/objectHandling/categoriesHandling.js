@@ -2,19 +2,20 @@ function categoriesHandling() {
 
     let categoriesObj = {};
 
-    const createNewCategory = (catgryTitle, color) => {                 //on the arr, [0] is the catgry color
+    const createNewCategory = (title, color) => {                 //on the arr, [0] is the catgry color
         
-        if (categoriesObj.hasOwnProperty(catgryTitle)) {                // can't create categories with the same name
-            alert ("Can't create categories with the same name!");
+        if (categoriesObj.hasOwnProperty(title)) {                // can't create categories with the same name
+            alert ("Ops, can't create categories with the same name");
             return;
         };
-        categoriesObj[catgryTitle] = [];
-        categoriesObj[catgryTitle].push(color); 
+
+        categoriesObj[title] = [];
+        categoriesObj[title].push(color); 
     };
 
-    const pushNewTask = (catgryTitle, taskObj) => {
+    const pushNewTask = (title, taskObj) => {
 
-        categoriesObj[catgryTitle].push(taskObj);
+        categoriesObj[title].push(taskObj);
     };
 
     const renameCategory = (oldName, newName) => {
@@ -22,13 +23,17 @@ function categoriesHandling() {
         delete categoriesObj[oldName];
     };
 
-    const changeColor = (catgryTitle, newColor) => {
-        categoriesObj[catgryTitle][0] = newColor;
+    const changeColor = (title, newColor) => {
+        categoriesObj[title][0] = newColor;
+    };
+
+    const removeCategory = (title) => {
+        delete categoriesObj[title];
     };
 
     const getAllTodos = () => console.log(categoriesObj);
 
-    return { createNewCategory, getAllTodos, pushNewTask, renameCategory, changeColor }
+    return { createNewCategory, getAllTodos, pushNewTask, renameCategory, removeCategory ,changeColor }
 
 }
 
