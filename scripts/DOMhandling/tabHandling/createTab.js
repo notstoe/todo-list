@@ -4,6 +4,7 @@ function createTab(color, text){
 
     const navElement = document.createElement('div');
         navElement.classList.add('tab');
+        // navElement.setAttribute('id', id);
 
         const tabIcon = document.createElement('a');
             tabIcon.style.backgroundColor = color;
