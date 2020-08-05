@@ -5,8 +5,8 @@ function removeTab() {
     const tabs = document.querySelectorAll('.tab');
     
     tabs.forEach((tab) => {
-    
-        if(tab.classList.contains('activeTab'))  containerTabs.removeChild(tab);
+
+        if (tab.classList.contains('activeTab'))  containerTabs.removeChild(tab);
 
     });
 }
