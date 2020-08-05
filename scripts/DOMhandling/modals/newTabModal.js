@@ -85,8 +85,8 @@ function newTabModal(){
 
         });
 
-
-    document.body.append(newTabModal, newTabModalOverlay);
+    document.body.insertBefore(newTabModal, document.body.lastChild);
+    document.body.insertBefore(newTabModalOverlay, document.body.lastChild);
 }
 
 
