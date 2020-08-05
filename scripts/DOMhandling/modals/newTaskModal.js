@@ -92,8 +92,8 @@ function newTaskModal(){
 
         });
 
-
-    document.body.append(newTaskModal, newTaskModalOverlay);
+    document.body.insertBefore(newTaskModal, document.body.lastChild);
+    document.body.insertBefore(newTaskModalOverlay, document.body.lastChild);
 }
 
 
