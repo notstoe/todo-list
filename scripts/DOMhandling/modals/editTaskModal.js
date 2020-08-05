@@ -1,7 +1,5 @@
 import { format } from 'date-fns'
 
-// creates editTaskModal in the DOM hiddden by default
-
 function editTaskModal(e){
 
     const editModal = document.querySelector('#editTaskModal');
@@ -93,6 +91,7 @@ function editTaskModal(e){
             taskDate.textContent = dateFormated.split('-').join('/');                                      
             taskTitle.textContent = inputTitle.value;
             taskDescript.textContent = inputDescript.value;
+            console.log(taskDescript);
 
             toggleEditTaskModal();
         });

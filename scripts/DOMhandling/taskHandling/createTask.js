@@ -51,7 +51,13 @@ function createTask(dueDate, title, description) {
 
         const taskDescript = document.createElement('p');
             taskDescript.classList.add('taskDescript', 'hideElement');
-            taskDescript.textContent = description;
+
+            if (taskDescript.textContent === '') {
+                taskDescript.textContent = "Task to be done!";
+
+            } else {
+                taskDescript.textContent = description;
+            }
     
         fullTask.append(newTask, taskDescript);
 
