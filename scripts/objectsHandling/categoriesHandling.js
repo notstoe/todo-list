@@ -28,10 +28,14 @@ function categoriesHandling() {
         delete categoriesObj[title];
     };
 
+    const getCategoryArr = (title) => {
+        return categoriesObj[title];
+    };
+    
     const getAll = () => console.log(categoriesObj);                    //for debugging
-
-    return { createNewCategory, pushNewTask, renameCategory, removeCategory, changeColor, getAll }
-
+    
+    return { createNewCategory, pushNewTask, renameCategory, removeCategory, changeColor, getCategoryArr, getAll }
+    
 }
 
 export { categoriesHandling }
