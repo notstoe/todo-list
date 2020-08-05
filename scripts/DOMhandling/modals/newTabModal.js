@@ -1,4 +1,5 @@
 import { createTab } from '../tabHandling/createTab'
+import { memoryObj } from '../../../src/index'
 
 function newTabModal(){
 
@@ -61,9 +62,23 @@ function newTabModal(){
                 alert ('Ops, looks like you forgot to add a Title!');
                 return;
             }
+            
+            let check = 1;                                                                          //checks for duplicate names on categories
+            const tabTitles = document.querySelectorAll('.navText');                                    
+            tabTitles.forEach((tabTitle) => { if (inputTitle.value == tabTitle.textContent) {
+                check = check - 2;
+            }
+            });
 
-            createTab(inputColor.value, inputTitle.value);
-        
+            if (check < 0) {
+                alert ("Oops, can't create categories with the same title");
+                return;
+            }
+
+
+            createTab(inputColor.value, inputTitle.value);                                      //creates in the DOM
+            memoryObj.createNewCategory(inputColor.value, inputTitle.value);                    //creates in the memory
+
             inputTitle.value = '';
 
             toggleNewTabModal();

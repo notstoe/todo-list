@@ -20,15 +20,16 @@ function createTab(color, text){
     const referenceNavBar = document.querySelector('.containerTabs');
         referenceNavBar.insertBefore(navElement, referenceNavBar.lastChild);
 
+    // FIXME - no need to use this here
 
-    const setColor = (newColor) => tabIcon.style.backgroundColor = newColor; 
+    // const setColor = (newColor) => tabIcon.style.backgroundColor = newColor; 
 
-    const setText = (newText) => tabText.textContent = newText;
+    // const setText = (newText) => tabText.textContent = newText;
 
-    const setActive = () => navElement.classList.toggle('activeTab');
+    // const setActive = () => navElement.classList.toggle('activeTab');
 
 
-    return { setColor, setText, setActive }
+    // return { setColor, setText, setActive }
 }
 
 export { createTab }

@@ -1,13 +1,10 @@
+// LIST OF TASKS 
+
 function categoriesHandling() {
 
     let categoriesObj = {};
 
-    const createNewCategory = (title, color) => {                 //on the arr, [0] is the catgry color
-        
-        if (categoriesObj.hasOwnProperty(title)) {                // can't create categories with the same name
-            alert ("Ops, can't create categories with the same name");
-            return;
-        };
+    const createNewCategory = (color, title) => {                 //on the arr, [0] is the catgry color
 
         categoriesObj[title] = [];
         categoriesObj[title].push(color); 
@@ -31,9 +28,9 @@ function categoriesHandling() {
         delete categoriesObj[title];
     };
 
-    const getAllTodos = () => console.log(categoriesObj);
+    const getAll = () => console.log(categoriesObj);                    //for debugging
 
-    return { createNewCategory, getAllTodos, pushNewTask, renameCategory, removeCategory ,changeColor }
+    return { createNewCategory, pushNewTask, renameCategory, removeCategory, changeColor, getAll }
 
 }
 

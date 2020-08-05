@@ -1,5 +1,7 @@
 import { createTask } from '../taskHandling/createTask'
 import { format } from 'date-fns'
+// import { createTaskObj } from '../../objectsHandling/createTaskObj'
+// import { memoryObj } from '../../../src/index'
 
 function newTaskModal(){
 
@@ -29,8 +31,7 @@ function newTaskModal(){
         const inputTitle = document.createElement('input');
             inputTitle.setAttribute('type', 'text');
             inputTitle.setAttribute('name', 'inputTitle');
-            inputTitle.classList.add('inputTitle');
-            // inputTitle.setAttribute('id', 'inputTitle');                
+            inputTitle.classList.add('inputTitle');                
 
         const labelDate = document.createElement('label');
             labelDate.setAttribute('for', 'inputDate');
@@ -41,7 +42,6 @@ function newTaskModal(){
             inputDate.setAttribute('type', 'date');
             inputDate.setAttribute('name', 'inputDate');
             inputDate.classList.add('inputDate');
-            // inputDate.setAttribute('id', 'inputDate');
 
         const labelDescript = document.createElement('label');
             labelDescript.setAttribute('for', 'inputDescript');
@@ -51,10 +51,9 @@ function newTaskModal(){
         const inputDescript = document.createElement('textarea');
             inputDescript.setAttribute('name', 'inputDescript');
             inputDescript.classList.add('inputDescript');
-            // inputDescript.setAttribute('id', 'inputDescript');
+            
 
         const submitBtn = document.createElement('button');
-            // submitBtn.setAttribute('id', 'submitNewTask');
             submitBtn.classList.add('submitBtn');
             submitBtn.textContent = 'Add New Task';
 

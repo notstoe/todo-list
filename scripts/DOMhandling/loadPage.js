@@ -75,8 +75,8 @@ function loadPage(){
         newTabModal();                                                              //creates modal for new tabs on the DOM
 
         const allTab = createTab('rgb(147, 163, 247)','All Categories');             //creates 'all categories' tab with reference to it (defaultTab)
-        const defaultTab = createTab('green','Sample Tab');                            
-        const defaultTab1 = createTab('purple','Sample Tab');                          
+        const defaultTab = createTab('green','Sample Tab1');                            
+        const defaultTab1 = createTab('purple','Sample Tab2');                          
 
     // TABS EVENT LISTENERS
     
