@@ -1,14 +1,8 @@
-import { createTab } from "./tabHandling/createTab";
-import { createTask } from "./taskHandling/createTask";
-import { newTaskModal } from './modals/newTaskModal';
 import { toggleNewTaskModal } from './modals/newTaskModal';
-import { newTabModal } from './modals/newTabModal';
 import { toggleNewTabModal } from './modals/newTabModal'
 import { removeTab } from './tabHandling/removeTab'
 
-function loadPage(){
-
-    // TODO - expand with methods for localStorage retrieving data later
+function pageTemplate(){
 
     const contentDiv = document.querySelector('#content');
 
@@ -72,11 +66,10 @@ function loadPage(){
 
         document.body.insertBefore(containerTabs, contentDiv);
 
-        newTabModal();                                                              //creates modal for new tabs on the DOM
 
-        const allTab = createTab('rgb(147, 163, 247)','All Categories');             //creates 'all categories' tab with reference to it (defaultTab)
-        const defaultTab = createTab('green','Sample Tab1');                            
-        const defaultTab1 = createTab('purple','Sample Tab2');                          
+        // FIXME - delete later
+        // const defaultTab = createTab('green','Sample Tab1');                            
+        // const defaultTab1 = createTab('purple','Sample Tab2');                          
 
     // TABS EVENT LISTENERS
     
@@ -98,18 +91,10 @@ function loadPage(){
 
         contentDiv.appendChild(taskContainer);
 
-        createTask('23/07/2020','I\'m a sample task, get me done!', 'testing full description');
-        createTask('24/07/2020','I\'m a sample task too, get me done!', 'testing full description');
-        createTask('25/07/2020','I\'m a sample task also, get me done!', 'testing full description');
-        createTask('26/07/2020','I\'m a sample task again, get me done!', 'testing full description');
-        createTask('27/07/2020','I\'m a sample task one more time, get me done!', 'testing full description testing full description testing full description testing full description testing full description testing full description');
-
-        newTaskModal();                         //creates new task modal on the DOM, hidden by default
-
         // EVENT LISTENERS
 
         newTodoBtn.addEventListener('click', toggleNewTaskModal);
 
 }
 
-export { loadPage }
+export { pageTemplate }
