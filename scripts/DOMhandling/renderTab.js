@@ -1,8 +1,20 @@
 import { memoryObj } from '../../src/index'
 import { pageTemplate } from '../DOMhandling/loadPageTemplate'
+import { createTask } from '../DOMhandling/taskHandling/createTask'
 
 function renderTab(e) {
     
+    // TODO - CSS STYLING
+
+    // const tabs = document.querySelectorAll('.tab');                             
+    // tabs.forEach((tab) => {
+
+    //     if (tab.classList.contains('activeTab'))  tab.classList.toggle('activeTab');
+
+    // });
+
+    // Rendering new tab content
+
     const contentDiv = document.querySelector('#content');
     const containerTabs = document.querySelector('.containerTabs');
     
@@ -14,12 +26,19 @@ function renderTab(e) {
 
     pageTemplate();
 
-    // const tabTitle = (e.target.lastChild.textContent);
+    // e.target.classList.toggle('activeTab');
 
-    // const categoryArr = memoryObj.getCategoryArr(tabTitle);
+    const tabTitle = (e.target.lastChild.textContent);
 
-    // for (let i = 0; i < array.length; i++) {
+    const categoryArr = memoryObj.getCategoryArr(tabTitle);
+
+    // TODO - finish renderTab function, loops through the category array and renders tasks
+
+    // for (let i = 1; i < categoryArr.length; i++) {                                                  //skips first element (color)
+        
     //     categoryArr[i];
+
+    //     createTask(categoryArr[i].)
         
     // }
 }

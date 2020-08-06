@@ -1,6 +1,8 @@
 import { toggleNewTaskModal } from './modals/newTaskModal';
 import { toggleNewTabModal } from './modals/newTabModal'
 import { removeTab } from './tabHandling/removeTab'
+import { createTab } from './tabHandling/createTab'
+import { memoryObj } from '../../src/index'
 
 function pageTemplate(){
 
@@ -26,7 +28,8 @@ function pageTemplate(){
         titleDiv.append(tabIndicator, pageTitle, helpLink);
 
     contentDiv.appendChild(titleDiv);
-        
+
+    // FIXME - change it so it generates tabs only once
     // NAVIGATION BAR (TABS)
 
         const containerTabs = document.createElement('div');
@@ -66,10 +69,9 @@ function pageTemplate(){
 
         document.body.insertBefore(containerTabs, contentDiv);
 
+        createTab('#93a3f7','To-do');                                          //DOM - default category tab
+        memoryObj.createNewCategory('#93a3f7','To-do');                        //Memory - default category tab
 
-        // FIXME - delete later
-        // const defaultTab = createTab('green','Sample Tab1');                            
-        // const defaultTab1 = createTab('purple','Sample Tab2');                          
 
     // TABS EVENT LISTENERS
     

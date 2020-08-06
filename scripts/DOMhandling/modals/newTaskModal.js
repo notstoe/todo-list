@@ -1,7 +1,7 @@
 import { createTask } from '../taskHandling/createTask'
 import { format } from 'date-fns'
-// import { createTaskObj } from '../../objectsHandling/createTaskObj'
-// import { memoryObj } from '../../../src/index'
+import { createTaskObj } from '../../objectsHandling/createTaskObj'
+import { memoryObj } from '../../../src/index'
 
 function newTaskModal(){
 
@@ -83,7 +83,11 @@ function newTaskModal(){
 
             
             createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
-        
+            let taskObj = createTaskObj(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
+            
+            // FIXME - pushes new task to category obj
+            // memoryObj.pushNewTask()
+
             inputDate.value = '';
             inputTitle.value = '';
             inputDescript.value = '';
