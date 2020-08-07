@@ -4,6 +4,7 @@ import { removeTask } from './removeTask';
 import { toggleEditTaskModal } from '../modals/editTaskModal';
 import { editTaskModal } from '../modals/editTaskModal';
 import { taskDone } from '../../objectsHandling/tasksHandling/taskDone';
+import { removeTaskObj } from '../../objectsHandling/tasksHandling/removeTaskObj';
 
 function createTask(dueDate, title, description, arrRef, isDone) {
 
@@ -64,8 +65,7 @@ function createTask(dueDate, title, description, arrRef, isDone) {
         fullTask.append(newTask, taskDescript);
 
         if (isDone) {                                                                //if the task is marked as done in the memory, creates it striked through
-            fullTask.classList.add('taskDone');
-            inputCheckBox.checked = true;
+            markTaskDone(0, fullTask);
         }
 
     const taskContainer = document.querySelector('.taskContainer');
@@ -79,7 +79,13 @@ function createTask(dueDate, title, description, arrRef, isDone) {
         markTaskDone(e);
         taskDone(e);
     });
-    rmvTask.addEventListener('click', removeTask);
+
+    rmvTask.addEventListener('click', (e) => {
+        removeTask(e);
+        removeTaskObj(e);
+    });
+
+
     editTask.addEventListener('click', (e) => {
         editTaskModal(e);                        // creates edit task modal on the DOM, hidden by default
         toggleEditTaskModal(e);

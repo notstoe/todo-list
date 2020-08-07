@@ -15,12 +15,16 @@ function categoriesHandling() {
         categoriesObj[title].push(taskObj);
     };
 
+    const removeTask = (title, arrRef) => {
+        categoriesObj[title].splice(arrRef, 1);
+    };
+
     const renameCategory = (oldName, newName) => {
         categoriesObj[newName] = categoriesObj[oldName];
         delete categoriesObj[oldName];
     };
 
-    const changeColor = (title, newColor) => {
+    const changeCatColor = (title, newColor) => {
         categoriesObj[title][0] = newColor;
     };
 
@@ -31,10 +35,10 @@ function categoriesHandling() {
     const getCategoryArr = (title) => {
         return categoriesObj[title];
     };
-    
+
     const getAll = () => console.log(categoriesObj);                    //for debugging
     
-    return { createNewCategory, pushNewTask, renameCategory, removeCategory, changeColor, getCategoryArr, getAll }
+    return { createNewCategory, pushNewTask, removeTask, renameCategory, removeCategory, changeCatColor, getCategoryArr, getAll }
     
 }
 
