@@ -1,5 +1,7 @@
 function removeTab() {
 
+    // TODO - update to return to default tab
+
     const containerTabs = document.querySelector('.containerTabs');
 
     const tabs = document.querySelectorAll('.tab');

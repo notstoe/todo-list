@@ -4,9 +4,10 @@ import { removeTask } from './removeTask';
 import { toggleEditTaskModal } from '../modals/editTaskModal';
 import { editTaskModal } from '../modals/editTaskModal';
 
-function createTask(dueDate, title, description) {
+function createTask(dueDate, title, description, arrRef) {
 
     const fullTask = document.createElement('div');
+        fullTask.setAttribute('id', arrRef);
 
         const newTask = document.createElement('div');
             newTask.classList.add('taskDiv');
@@ -52,7 +53,7 @@ function createTask(dueDate, title, description) {
         const taskDescript = document.createElement('p');
             taskDescript.classList.add('taskDescript', 'hideElement');
 
-            if (taskDescript.textContent === '') {
+            if (description.length == 0) {
                 taskDescript.textContent = "Task to be done!";
 
             } else {
