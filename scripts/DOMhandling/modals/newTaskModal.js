@@ -1,6 +1,6 @@
 import { createTask } from '../taskHandling/createTask'
 import { format } from 'date-fns'
-import { createTaskObj } from '../../objectsHandling/createTaskObj'
+import { createTaskObj } from '../../objectsHandling/tasksHandling/createTaskObj'
 import { memoryObj } from '../../../src/index'
 
 function newTaskModal(){
@@ -77,16 +77,19 @@ function newTaskModal(){
                 return;
             }
 
-            let dateArr = inputDate.value.split('-');                                  //date as string: yyyy-mm-dd into [yyyy, mm, dd]
+            let dateArr = inputDate.value.split('-');                                                                        //date as string: yyyy-mm-dd into [yyyy, mm, dd]
 
             let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');
 
+
+            const taskObj = createTaskObj(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
             
-            createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
-            let taskObj = createTaskObj(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
-            
-            // FIXME - pushes new task to category obj
-            // memoryObj.pushNewTask()
+            const activeTab = document.querySelector('.activeTab');
+                memoryObj.pushNewTask(activeTab.lastChild.textContent, taskObj);                                             //pushes to memory array, using class .activeTab as reference to find the correct category
+                let arrPos = memoryObj.getCategoryArr(activeTab.lastChild.textContent).length;                               //gets the position of the new task
+                memoryObj.getAll();
+
+            createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value, arrPos);
 
             inputDate.value = '';
             inputTitle.value = '';
