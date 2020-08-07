@@ -4,43 +4,48 @@ import { createTask } from '../DOMhandling/taskHandling/createTask'
 
 function renderTab(e) {
     
-    // TODO - CSS STYLING
+    let tabTitle;
 
-    // const tabs = document.querySelectorAll('.tab');                             
-    // tabs.forEach((tab) => {
+    const tabs = document.querySelectorAll('.tab');                                                 // CSS STYLING  
+    tabs.forEach((tab) => {
 
-    //     if (tab.classList.contains('activeTab'))  tab.classList.toggle('activeTab');
+        if (tab.classList.contains('activeTab'))  tab.classList.toggle('activeTab');
 
-    // });
+    });
 
-    // Rendering new tab content
+    if (e.target.parentNode.classList.contains('containerTabs')){
+
+        e.target.classList.toggle('activeTab');
+        tabTitle = (e.target.lastChild.textContent);
+        
+    } else {
+
+        e.target.parentNode.classList.toggle('activeTab');
+        tabTitle = e.target.parentNode.lastChild.textContent;        
+    }
 
     const contentDiv = document.querySelector('#content');
-    const containerTabs = document.querySelector('.containerTabs');
-    
-    document.body.removeChild(containerTabs);
 
     while (contentDiv.firstChild) {
         contentDiv.removeChild(contentDiv.lastChild);
     }
 
     pageTemplate();
-
-    // e.target.classList.toggle('activeTab');
-
-    const tabTitle = (e.target.lastChild.textContent);
-
+    
     const categoryArr = memoryObj.getCategoryArr(tabTitle);
 
-    // TODO - finish renderTab function, loops through the category array and renders tasks
+    const tabIndicator = document.querySelector('#tabIndicator');
+        tabIndicator.style.backgroundColor = categoryArr[0];
 
-    // for (let i = 1; i < categoryArr.length; i++) {                                                  //skips first element (color)
-        
-    //     categoryArr[i];
+    const pageTitle = document.querySelector('#pageTitle');
+        pageTitle.textContent = tabTitle;
 
-    //     createTask(categoryArr[i].)
+
+    for (let i = 1; i < categoryArr.length; i++) {                                                  //skips first element (color)
+
+        createTask(categoryArr[i].getDueDate(), categoryArr[i].getTitle(), categoryArr[i].getDescript(), i);
         
-    // }
+    }
 }
 
 export { renderTab }
