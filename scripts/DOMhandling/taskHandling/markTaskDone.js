@@ -1,5 +1,3 @@
-import { memoryObj } from '../../../src/index'
-
 function markTaskDone(e) {
 
     const rmvBtn = e.target.parentNode.parentNode.lastChild;
