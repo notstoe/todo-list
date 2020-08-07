@@ -43,7 +43,7 @@ function renderTab(e) {
 
     for (let i = 1; i < categoryArr.length; i++) {                                                  //skips first element (color)
 
-        createTask(categoryArr[i].getDueDate(), categoryArr[i].getTitle(), categoryArr[i].getDescript(), i);
+        createTask(categoryArr[i].getDueDate(), categoryArr[i].getTitle(), categoryArr[i].getDescript(), i, categoryArr[i].getTaskDone());
         
     }
 }

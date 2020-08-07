@@ -17,7 +17,7 @@ function createTaskObj(taskDueDate, taskTitle, taskDescription, taskDone) {
     const setTitle = (input) => title = input;
     const setDescript = (input) => description = input;
     const setDueDate = (input) => dueDate = input;
-    const setTaskDone = (input) => isDone = input;
+    const setTaskDone = () => isDone ? isDone = false : isDone = true;
 
     return {getTitle, getDescript, getDueDate, getTaskDone, setTitle, setDescript, setDueDate, setTaskDone}
 

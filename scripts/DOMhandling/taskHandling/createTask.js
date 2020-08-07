@@ -3,8 +3,9 @@ import { markTaskDone } from './markTaskDone';
 import { removeTask } from './removeTask';
 import { toggleEditTaskModal } from '../modals/editTaskModal';
 import { editTaskModal } from '../modals/editTaskModal';
+import { taskDone } from '../../objectsHandling/tasksHandling/taskDone';
 
-function createTask(dueDate, title, description, arrRef) {
+function createTask(dueDate, title, description, arrRef, isDone) {
 
     const fullTask = document.createElement('div');
         fullTask.setAttribute('id', arrRef);
@@ -62,6 +63,10 @@ function createTask(dueDate, title, description, arrRef) {
     
         fullTask.append(newTask, taskDescript);
 
+        if (isDone) {                                                                //if the task is marked as done in the memory, creates it striked through
+            fullTask.classList.add('taskDone');
+            inputCheckBox.checked = true;
+        }
 
     const taskContainer = document.querySelector('.taskContainer');
         taskContainer.insertBefore(fullTask, taskContainer.lastChild);        
@@ -70,7 +75,10 @@ function createTask(dueDate, title, description, arrRef) {
 // ADDING LISTENERS FOR ACTIONS ON A TASK
 
     taskTitle.addEventListener('click', expandTask);
-    inputCheckBox.addEventListener('click', markTaskDone);
+    inputCheckBox.addEventListener('click', (e) => {
+        markTaskDone(e);
+        taskDone(e);
+    });
     rmvTask.addEventListener('click', removeTask);
     editTask.addEventListener('click', (e) => {
         editTaskModal(e);                        // creates edit task modal on the DOM, hidden by default

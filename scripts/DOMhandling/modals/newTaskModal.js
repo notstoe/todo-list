@@ -86,8 +86,7 @@ function newTaskModal(){
             
             const activeTab = document.querySelector('.activeTab');
                 memoryObj.pushNewTask(activeTab.lastChild.textContent, taskObj);                                             //pushes to memory array, using class .activeTab as reference to find the correct category
-                let arrPos = memoryObj.getCategoryArr(activeTab.lastChild.textContent).length;                               //gets the position of the new task
-                memoryObj.getAll();
+                let arrPos = memoryObj.getCategoryArr(activeTab.lastChild.textContent).length-1;                             //gets the position of the new task in the memory array
 
             createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value, arrPos);
 
