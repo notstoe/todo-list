@@ -2,6 +2,7 @@ import { removeTab } from './removeTab'
 import { toggleNewTabModal } from '../modals/newTabModal'
 import { createTab } from './createTab' 
 import { memoryObj } from '../../../src/index'
+import { removeTabObj } from '../../objectsHandling/tabsHandling/removeTabObj';
 
 // NAVIGATION BAR (TABS)
 
@@ -45,7 +46,9 @@ function createTabsContainer() {
 
     // TABS EVENT LISTENERS
 
-        rmvBtn.addEventListener('click', removeTab);
+        rmvBtn.addEventListener('click', () => {     
+            removeTabObj(removeTab());                                         //removeTab() returns reference to the deleted Tab
+        });
 
         newTabBtn.addEventListener('click', toggleNewTabModal);
     

@@ -5,6 +5,7 @@ function removeTab() {
     const tabs = document.querySelectorAll('.tab');
     
     let breakForEachLoop = false;
+    let deletedTabRef;
 
     tabs.forEach((tab) => {
 
@@ -26,7 +27,7 @@ function removeTab() {
                         tab.previousSibling.classList.add('activeTab');
                         renderTab(0, tab.previousSibling);
                     }
-                    
+                    deletedTabRef = tab;
                     tab.parentNode.removeChild(tab);
                 }
 
@@ -34,6 +35,8 @@ function removeTab() {
             }
         }
     });
+    
+    return deletedTabRef;
 }
 
 export { removeTab }
