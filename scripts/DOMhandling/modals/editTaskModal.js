@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+import { memoryObj } from '../../../src/index'
 
 function editTaskModal(e){
 
@@ -88,11 +89,24 @@ function editTaskModal(e){
             let dateArr = inputDate.value.split('-');                                               //date as string: yyyy-mm-dd into [yyyy, mm, dd]
             let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');
 
-            taskDate.textContent = dateFormated.split('-').join('/');                                      
-            taskTitle.textContent = inputTitle.value;
-            taskDescript.textContent = inputDescript.value;
-            console.log(taskDescript);
+            // EDITING IN THE DOM
 
+                taskDate.textContent = dateFormated.split('-').join('/');                                      
+                taskTitle.textContent = inputTitle.value;
+                taskDescript.textContent = inputDescript.value;
+            
+            // EDITING IN THE OBJECT
+            
+                const bigTaskDiv = e.target.parentNode.parentNode;
+                const arrRef = bigTaskDiv.id;                                                               //id corresponds to array index
+                
+                const activeTab = document.querySelector('.activeTab');
+                const categoryArr = memoryObj.getCategoryArr(activeTab.lastChild.textContent);
+
+                    categoryArr[arrRef].setDueDate(dateFormated.split('-').join('/'));
+                    categoryArr[arrRef].setTitle(inputTitle.value);
+                    categoryArr[arrRef].setDescript(inputDescript.value);               
+            
             toggleEditTaskModal();
         });
 
