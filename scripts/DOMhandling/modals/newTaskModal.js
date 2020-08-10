@@ -79,14 +79,17 @@ function newTaskModal(){
 
             let dateArr = inputDate.value.split('-');                                                                        //date as string: yyyy-mm-dd into [yyyy, mm, dd]
 
-            let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');
+            let dateFormated = format(new Date(dateArr[0], dateArr[1]-1, dateArr[2]), 'dd-MM-yyyy');                         //then into dd-MM-yyyy with fns library
 
+            // MEMORY OBJECT HANDLING
 
-            const taskObj = createTaskObj(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);
+            const taskObj = createTaskObj(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value);        //finally, date is passed as a string in this format: dd/MM/yyyy
             
             const activeTab = document.querySelector('.activeTab');
                 memoryObj.pushNewTask(activeTab.lastChild.textContent, taskObj);                                             //pushes to memory array, using class .activeTab as reference to find the correct category
                 let arrPos = memoryObj.getCategoryArr(activeTab.lastChild.textContent).length-1;                             //gets the position of the new task in the memory array
+
+            // DOM HANDLING
 
             createTask(dateFormated.split('-').join('/'), inputTitle.value, inputDescript.value, arrPos);
 
