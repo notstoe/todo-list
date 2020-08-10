@@ -71,7 +71,7 @@ function editTaskModal(e){
         editTaskModalOverlay.classList.add('modalOverlay', 'hideElement');
         editTaskModalOverlay.setAttribute('id', 'editTaskModalOverlay');
 
-    //LISTENERS FOR TASK MODAL
+    //LISTENERS FOR EDIT TASK MODAL
         
         closeBtn.addEventListener('click', toggleEditTaskModal);
 
