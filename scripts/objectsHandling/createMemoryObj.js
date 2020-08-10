@@ -1,6 +1,6 @@
 // LIST OF TASKS 
 
-function categoriesHandling() {
+function createMemoryObj() {
 
     let categoriesObj = {};
 
@@ -42,4 +42,4 @@ function categoriesHandling() {
     
 }
 
-export { categoriesHandling }
+export { createMemoryObj }
