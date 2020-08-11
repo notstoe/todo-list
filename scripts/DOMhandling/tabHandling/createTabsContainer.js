@@ -3,6 +3,7 @@ import { toggleNewTabModal } from '../modals/newTabModal'
 import { createTab } from './createTab' 
 import { memoryObj } from '../../../src/index'
 import { removeTabObj } from '../../objectsHandling/tabsHandling/removeTabObj';
+import { editTabModal, toggleEditTabModal } from '../modals/editTabModal';
 
 // NAVIGATION BAR (TABS)
 
@@ -51,6 +52,8 @@ function createTabsContainer() {
         });
 
         newTabBtn.addEventListener('click', toggleNewTabModal);
+
+        editBtn.addEventListener('click', () => toggleEditTabModal(true) );
     
     // DEFAULT TAB
     

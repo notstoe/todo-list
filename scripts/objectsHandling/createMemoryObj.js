@@ -20,6 +20,7 @@ function createMemoryObj() {
     };
 
     const renameCategory = (oldName, newName) => {
+        if (oldName === newName) return;
         categoriesObj[newName] = categoriesObj[oldName];
         delete categoriesObj[oldName];
     };

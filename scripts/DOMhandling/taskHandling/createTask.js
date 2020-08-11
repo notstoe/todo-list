@@ -87,7 +87,7 @@ function createTask(dueDate, title, description, arrRef, isDone) {
 
 
     editTask.addEventListener('click', (e) => {
-        editTaskModal(e);                        // creates edit task modal on the DOM, hidden by default
+        editTaskModal(e);                                       // creates edit task modal on the DOM, hidden by default
         toggleEditTaskModal(e);
     });
 }
