@@ -37,9 +37,18 @@ function createMemoryObj() {
         return categoriesObj[title];
     };
 
-    const getAll = () => console.log(categoriesObj);                    //for debugging
+    const getTitles = () => {
+        
+        let titlesArr = [];
+        
+        for (const key in categoriesObj) {
+            titlesArr.push(key);
     
-    return { createNewCategory, pushNewTask, removeTask, renameCategory, removeCategory, changeCatColor, getCategoryArr, getAll }
+        }
+        return titlesArr;
+    };
+    
+    return { createNewCategory, pushNewTask, removeTask, renameCategory, removeCategory, changeCatColor, getCategoryArr, getTitles }
     
 }
 
