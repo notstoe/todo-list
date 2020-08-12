@@ -7,24 +7,24 @@ function pageTemplate(){
 
     // TITLE AND SUBTITLE
 
-    const titleDiv = document.createElement('div');
-        titleDiv.classList.add('titleContainer');
-    
-        const pageTitle = document.createElement('h1');
-            pageTitle.setAttribute('id', 'pageTitle');
-            pageTitle.textContent = 'To-do';
+        const titleDiv = document.createElement('div');
+            titleDiv.classList.add('titleContainer');
+        
+            const pageTitle = document.createElement('h1');
+                pageTitle.setAttribute('id', 'pageTitle');
+                pageTitle.textContent = 'To-do';
 
-        const tabIndicator = document.createElement('span');
-            tabIndicator.setAttribute('id','tabIndicator');
-            tabIndicator.style.backgroundColor = 'rgb(147, 163, 247)';
+            const tabIndicator = document.createElement('span');
+                tabIndicator.setAttribute('id','tabIndicator');
+                tabIndicator.style.backgroundColor = 'rgb(147, 163, 247)';
 
-        const helpLink = document.createElement('span');
-            helpLink.setAttribute('id','helpLink');
-            helpLink.textContent = 'Help';
+            const helpLink = document.createElement('span');
+                helpLink.setAttribute('id','helpLink');
+                helpLink.textContent = 'Help';
 
-        titleDiv.append(tabIndicator, pageTitle, helpLink);
+            titleDiv.append(tabIndicator, pageTitle, helpLink);
 
-    contentDiv.appendChild(titleDiv);
+        contentDiv.appendChild(titleDiv);
 
     // TASKS CONTENT
 
@@ -39,7 +39,7 @@ function pageTemplate(){
 
         contentDiv.appendChild(taskContainer);
 
-        // EVENT LISTENERS
+    // EVENT LISTENERS
 
         newTodoBtn.addEventListener('click', toggleNewTaskModal);
 
