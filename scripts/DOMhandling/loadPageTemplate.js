@@ -1,4 +1,5 @@
 import { toggleNewTaskModal } from './modals/newTaskModal';
+import { togglehelpModal } from './modals/helpModal';
 
 function pageTemplate(){
 
@@ -41,6 +42,8 @@ function pageTemplate(){
         // EVENT LISTENERS
 
         newTodoBtn.addEventListener('click', toggleNewTaskModal);
+
+        helpLink.addEventListener('click', togglehelpModal);
 
 }
 

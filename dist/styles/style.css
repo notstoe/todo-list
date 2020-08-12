@@ -362,3 +362,42 @@
   width: 25.2vw;
 }
 
+/* MODAL HELP BTN */
+
+.helpContent {
+  width: 80%;
+  margin: 40px auto;
+  line-height: 20px;
+  text-align: justify;
+}
+
+#helpModalTitle {
+  margin: 6px auto;
+  margin-bottom: -90px;
+  max-width: 100%;
+  font-size: 1.44vw;
+}
+
+#helpModal {
+  width: 60vw;
+  height: 80vh;
+}
+
+.creditsDiv {
+  margin: 0 auto;
+  margin-bottom: -40px;
+  margin-top: -50px;
+}
+
+.helpDiv {
+  margin-top: -40px;
+}
+
+#github {
+  text-decoration: underline;
+  color: blue;
+}
+
+#github:hover {
+  text-decoration: none;
+}
