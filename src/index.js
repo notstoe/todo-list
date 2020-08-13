@@ -4,7 +4,7 @@ import { newTaskModal } from '../scripts/DOMhandling/modals/newTaskModal'
 import { createTabsContainer } from '../scripts/DOMhandling/tabHandling/createTabsContainer'
 import { editTabModal } from '../scripts/DOMhandling/modals/editTabModal';
 import { helpModal } from '../scripts/DOMhandling/modals/helpModal';
-import { getDataLS, saveDataLS } from '../scripts/localStorageHandling'
+import { renderDataLS, saveDataLS } from '../scripts/localStorageHandling'
 
 let storageLS = window.localStorage;
 
@@ -20,8 +20,8 @@ createTabsContainer();                                                      //in
 
 // EVENT LISTENERS
 
-// window.addEventListener('load', getDataLS);
-window.addEventListener('click', saveDataLS);
+window.addEventListener('load', renderDataLS);
+window.addEventListener('unload', saveDataLS);
 
 export { memoryObj, storageLS }
 
