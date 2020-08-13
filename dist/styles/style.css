@@ -364,33 +364,36 @@
 
 /* MODAL HELP BTN */
 
-.helpContent {
-  width: 80%;
-  margin: 40px auto;
-  line-height: 20px;
-  text-align: justify;
-}
-
-#helpModalTitle {
-  margin: 6px auto;
-  margin-bottom: -90px;
-  max-width: 100%;
-  font-size: 1.44vw;
-}
-
 #helpModal {
   width: 60vw;
   height: 80vh;
 }
 
-.creditsDiv {
-  margin: 0 auto;
-  margin-bottom: -40px;
-  margin-top: -50px;
+.helpDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70%;
 }
 
-.helpDiv {
-  margin-top: -40px;
+.helpContent {
+  width: 83%;
+  line-height: 22px;
+  text-align: justify;
+  align-self: center;
+  font-size: 1.23vw;
+}
+
+#helpModalTitle {
+  margin: 0 auto;
+  max-width: 100%;
+  font-size: 1.5vw;
+}
+
+.creditsDiv {
+  margin: 0 auto;
+  margin-bottom: 5vh;
+  font-size: 1.15vw;
 }
 
 #github {
