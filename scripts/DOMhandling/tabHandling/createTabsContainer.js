@@ -54,11 +54,6 @@ function createTabsContainer() {
         newTabBtn.addEventListener('click', toggleNewTabModal);
 
         editBtn.addEventListener('click', () => toggleEditTabModal(true) );
-    
-    // DEFAULT TAB
-    
-        createTab('#93a3f7','To-do');                                          //DOM - default category tab
-        memoryObj.createNewCategory('#93a3f7','To-do');                        //Memory - default category tab
 }
 
 export { createTabsContainer }
