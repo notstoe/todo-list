@@ -59,22 +59,28 @@ function editTabModal(){
             const activeTab = document.querySelector('.activeTab');
             const tabTitleReference = activeTab.lastChild.textContent;
 
-            if (inputTitle.value === '') {
-                alert ('Ops, looks like you forgot to add a Title!');
+            if (inputTitle.validity.valueMissing) {
+                inputTitle.setCustomValidity('A title is required');
+                inputTitle.reportValidity();
                 return;
+            } else {
+                inputTitle.setCustomValidity('');
             }
             
-            let check = 1;                                                                          //checks for duplicate names on categories
+            let check = 1;                                                                                  //checks for duplicate names on categories
             const tabTitles = document.querySelectorAll('.navText');                                    
                 tabTitles.forEach((tabTitle) => { if (inputTitle.value == tabTitle.textContent) {
-                    check = check - 2;
+                    if (!tabTitle.parentNode.classList.contains('activeTab')) check = check - 2;
                 }
                 });
 
-            if (check < -1) {                                                                               //allows 1 repetition of title, in case you only edit the color
-                alert ("Oops, can't create categories with the same title");
-                return;
-            }
+                if (check < 0) {
+                    inputTitle.setCustomValidity("Can't create categories with the same title");
+                    inputTitle.reportValidity();
+                    return;
+                } else {
+                    inputTitle.setCustomValidity('');
+                }
 
             // EDITING TAB IN THE MEMORY OBJ
 

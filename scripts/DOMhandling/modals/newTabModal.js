@@ -27,6 +27,7 @@ function newTabModal(){
         const inputTitle = document.createElement('input');
             inputTitle.setAttribute('type', 'text');
             inputTitle.setAttribute('name', 'inputTitleCategory');
+            inputTitle.setAttribute('required', 'required');
             inputTitle.classList.add('inputTitle', 'inputTitleCategory');
 
         const labelColor = document.createElement('label');
@@ -58,9 +59,12 @@ function newTabModal(){
 
         submitBtn.addEventListener('click', () => {
 
-            if (inputTitle.value === '') {
-                alert ('Ops, looks like you forgot to add a Title!');
+            if (inputTitle.validity.valueMissing) {
+                inputTitle.setCustomValidity('A title is required');
+                inputTitle.reportValidity();
                 return;
+            } else {
+                inputTitle.setCustomValidity('');
             }
             
             let check = 1;                                                                          //checks for duplicate names on categories
@@ -71,8 +75,11 @@ function newTabModal(){
             });
 
             if (check < 0) {
-                alert ("Oops, can't create categories with the same title");
+                inputTitle.setCustomValidity("Can't create categories with the same title");
+                inputTitle.reportValidity();
                 return;
+            } else {
+                inputTitle.setCustomValidity('');
             }
 
 

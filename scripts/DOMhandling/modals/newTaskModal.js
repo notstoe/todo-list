@@ -31,6 +31,7 @@ function newTaskModal(){
         const inputTitle = document.createElement('input');
             inputTitle.setAttribute('type', 'text');
             inputTitle.setAttribute('name', 'inputTitle');
+            inputTitle.setAttribute('required', 'required');
             inputTitle.classList.add('inputTitle');                
 
         const labelDate = document.createElement('label');
@@ -41,6 +42,7 @@ function newTaskModal(){
         const inputDate = document.createElement('input');
             inputDate.setAttribute('type', 'date');
             inputDate.setAttribute('name', 'inputDate');
+            inputDate.setAttribute('required', 'required');
             inputDate.classList.add('inputDate');
 
         const labelDescript = document.createElement('label');
@@ -71,10 +73,27 @@ function newTaskModal(){
 
         submitBtn.addEventListener('click', () => {
 
-            if (inputDate.value === '' || inputTitle.value === '') {
+            if (inputDate.validity.valueMissing || inputTitle.validity.valueMissing) {
+                if (inputDate.validity.valueMissing && inputTitle.validity.valueMissing) {
+                    inputTitle.setCustomValidity('A title is required');
+                    inputTitle.reportValidity();
+                    inputDate.setCustomValidity('A date is required');
+                    inputDate.reportValidity();
 
-                alert ('Ops, looks like you forgot to add a Title and/or a due Date');
+                } else if (inputTitle.validity.valueMissing) {
+                    inputTitle.setCustomValidity('A title is required');
+                    inputDate.setCustomValidity('');
+                    inputTitle.reportValidity();
+
+                } else if (inputDate.validity.valueMissing) {
+                    inputDate.setCustomValidity('A date is required');
+                    inputTitle.setCustomValidity('');
+                    inputDate.reportValidity();
+                }
                 return;
+            } else {
+                inputDate.setCustomValidity('');
+                inputTitle.setCustomValidity('');
             }
 
             let dateArr = inputDate.value.split('-');                                                                        //date as string: yyyy-mm-dd into [yyyy, mm, dd]
