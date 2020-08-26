@@ -103,7 +103,7 @@
   
   .modal {
     width: 85%;
-    height: 70%;
+    height: 75%;
     padding: 1vw;
   }
   
@@ -119,6 +119,10 @@
   .submitBtn {
     height: 7vh;
     width: 40vw;
+  }
+  
+  .modalLabel {
+    margin: 2vh 0;
   }
   
 }
